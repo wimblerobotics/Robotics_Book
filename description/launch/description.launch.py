@@ -24,7 +24,7 @@ from launch import LaunchContext
 from launch.actions import OpaqueFunction
 
 
-def urdf_file_file_name(context, file_name_var):
+def launch_robot_state_publisher(context, file_name_var):
     description_directory_path = get_package_share_directory('description')
     file_name = context.perform_substitution(file_name_var)
     print(F"file_name: {file_name}")
@@ -98,7 +98,7 @@ def generate_launch_description():
     )
     ld.add_action(joint_state_publisher_node)
 
-    ld.add_action(OpaqueFunction(function=urdf_file_file_name, args=[
+    ld.add_action(OpaqueFunction(function=launch_robot_state_publisher, args=[
                              LaunchConfiguration('urdf_file_name')]))
     
     rviz_node = launch_ros.actions.Node(
@@ -106,7 +106,7 @@ def generate_launch_description():
         executable='rviz2',
         name='rviz2',
         condition=IfCondition(LaunchConfiguration("do_rviz")),
-        arguments=['-d', os.path.join(description_directory_path, 'rviz', 'base.rviz')],
+        arguments=['-d', os.path.join(description_directory_path, 'rviz', 'config.rviz')],
     )
     ld.add_action(rviz_node)
 
