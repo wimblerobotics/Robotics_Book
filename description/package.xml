@@ -1,3 +1,25 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>description</name>
+  <version>1.0.0</version>
+  <description>'description' package</description>
+  <maintainer email="mike@wimblerobotics.com">Michael Wimble</maintainer>
+  <license>GPLv3S</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>xacro</exec_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
 <!-- Copyright 2024 Michael Wimble
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -11,26 +33,3 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
  -->
-<?xml version="1.0"?>
-<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
-<package format="3">
-  <name>description</name>
-  <version>1.0.0</version>
-  <description>S URDF package</description>
-  <maintainer email="mike@wimblerobotics.com">Michael Wimble</maintainer>
-  <license>GPLv3S</license>
-
-  <buildtool_depend>ament_cmake</buildtool_depend>
-
-  <exec_depend>joint_state_publisher</exec_depend>
-  <exec_depend>joint_state_publisher_gui</exec_depend>
-  <exec_depend>robot_state_publisher</exec_depend>
-  <exec_depend>xacro</exec_depend>
-
-  <test_depend>ament_lint_auto</test_depend>
-  <test_depend>ament_lint_common</test_depend>
-
-  <export>
-    <build_type>ament_cmake</build_type>
-  </export>
-</package>

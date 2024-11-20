@@ -1,0 +1,23 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "ROS2x: Launch File",
+      "type": "python",
+      "request": "launch",
+      "program": "/opt/ros/jazzy/bin/ros2",
+      "args": [
+        "launch",
+        "description",
+        "description.launch.py"
+      ],
+      "console": "integratedTerminal",
+      "env": {
+        "PYTHONPATH": "/home/ros/book_ws/install/lib/python3.8/site-packages:${env:PYTHONPATH}"
+      }
+    }
+  ]
+}

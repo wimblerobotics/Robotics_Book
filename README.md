@@ -1,2 +1,4 @@
 # Robotics by Michael Wimble
-## Introduction
+
+This repository contains the code and documentation for the book
+"Robotics" by Michael Wimble.

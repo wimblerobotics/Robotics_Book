@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<robot name="mybot">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <cylinder radius="1.0" length="0.5" />
+      </geometry>
+      <!-- <origin rpy="0 0 0" xyz="0 0 ${(body_height/2)}" /> -->
+    </visual>
+  </link>
+
+</robot>
+  
