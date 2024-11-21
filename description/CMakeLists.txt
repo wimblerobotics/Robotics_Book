@@ -34,7 +34,7 @@ find_package(urdf REQUIRED)
 
 # Install files.
 install(DIRECTORY
-  config launch meshes models rviz urdf worlds
+  config launch meshes models rviz scripts urdf worlds
   DESTINATION share/${PROJECT_NAME}/
 )
 
