@@ -1,13 +1,24 @@
 <?xml version="1.0"?>
-<robot name="mybot">
+<robot name="simple_robot">
   <link name="base_link">
     <visual>
       <geometry>
-        <cylinder radius="1.0" length="0.5" />
+        <box size="0.5 0.5 0.5"/>
       </geometry>
-      <!-- <origin rpy="0 0 0" xyz="0 0 ${(body_height/2)}" /> -->
+      <pose>0 0 0.25 0 0 0</pose>
     </visual>
   </link>
-
+  <link name="wheel">
+    <visual>
+      <geometry>
+        <cylinder radius="0.1" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel"/>
+    <origin xyz="0 -0.29 -0.3" rpy="1.5708 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
 </robot>
-  
