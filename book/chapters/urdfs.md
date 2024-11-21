@@ -70,9 +70,10 @@ Here is what the UDR file looks like using the rviz2 tool:
 To see the visualization yourself, you can run the following command:
 
 ```bash
-cd ~/wr_book_ww # Change this if you have a different workspace name
+cd ~/wr_book_ws # Change this if you have a different workspace name
 colcon build --symlink-install
 source install/setup.bash
 ros2 launch description description.launch.py urdf_file_name:="1.urdf"
 ```
 
+## Explaining 1.urdf
