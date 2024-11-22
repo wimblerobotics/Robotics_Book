@@ -15,7 +15,7 @@ source install/setup.bash
 
 ## What is a URDF?
 
-A URDF is a text file that describes a robot's pyhsical structure. It can be used, for instance, to create a simulated image of what the robot looks like. It does more than just that, such a provide kinematic properties so that a full, physics-base simulator can simulate the robot acting and moving in a simulated world.
+A URDF is a text file that describes a robot's pyhsical structure. It can be used, for instance, to create a simulated image of what the robot looks like. It can do more than just that, such a provide kinematic properties so that a full, physics-base simulator can simulate the robot acting and moving in a simulated world.
 
 For now, think of a URDF as a list of parts, called links and a list of descriptions about how those links are connected, called joints. In this section, we will create a URDF that describes a two wheeled robot with a square body, a caster wheel, and a LIDAR sensor. We will use the ROS tool called rviz2 to visualize the robot. We will do this in a few steps, starting with simple shapes and then adding more complexity and eventually add in the use of a macro processor to simpllfy how you write the description.
 
@@ -63,9 +63,12 @@ A URDF file is an XML file. You can create one using a text editor. Let's begin 
 
 </robot>
   ```
+
 Here is what the UDR file looks like using the rviz2 tool:
 
-![alt text](../media/1.png)*
+![alt text](../media/1.png)
+
+*
 
 To see the visualization yourself, you can run the following command:
 
@@ -78,11 +81,11 @@ ros2 launch description description.launch.py urdf_file_name:="1.urdf"
 
 ## Explaining 1.urdf
 
-The first line, `<?xml version="1.0"?>`, is the XML declaration. It tells the parser that this is an XML file and what version of XML it is.
+The first line, `<?xml version="1.0"?>` , is the XML declaration. It tells the parser that this is an XML file and what version of XML it is.
 
-The next line, `<robot name="simple_robot">`, is the start of the robot description. The `name` attribute is the name of the robot. The robot description ends with `</robot>`.
+The next line, `<robot name="simple_robot">` , is the start of the robot description. The `name` attribute is the name of the robot. The robot description ends with `</robot>` .
 
-Next come link and joint pairs. Remember that link elements define real, physical components of the robot and joint elements define how those links are connected. In this case, we have three links: `base_link`, `left_wheel`, and `right_wheel`. We also have two joints: `wheel_joint` and `right_wheel_joint`.
+Next come link and joint pairs. Remember that link elements define real, physical components of the robot and joint elements define how those links are connected. In this case, we have three links: `base_link` , `left_wheel` , and `right_wheel` . We also have two joints: `wheel_joint` and `right_wheel_joint` .
 
 The name `base_link` is chosen because the ROS [rep 105](https://www.ros.org/reps/rep-0105.html)
 suggests that the base link should be the name of the link that is fixed to the world. I'll explain what that means later on.
