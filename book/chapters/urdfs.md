@@ -15,13 +15,25 @@ source install/setup.bash
 
 ## What is a URDF?
 
-A URDF is a text file that describes a robot's pyhsical structure. It can also be used, for instance, to create a simulated image of what the robot looks like. It can alsodo** more than just that, such a provide kinematic properties so that a full, physics-base simulator can simulate the robot acting and moving in a simulated world.
+A URDF is a text file that describes a robot's pyhsical structure.
+It can also be used, for instance, to create a simulated image of what the robot looks like.
+It can also do more than just that, such a provide kinematic properties so that a full,
+physics-base simulator can simulate the robot acting and moving in a simulated world.
 
-For now, think of a URDF as a list of parts, called links and a list of descriptions about how those links are connected, called joints. In this section, we will create a URDF that describes a two wheeled robot with a square body, a caster wheel, and a LIDAR sensor. We will use the ROS tool called rviz2 to visualize the robot. We will do this in a few steps, starting with simple shapes and then adding more complexity and eventually add in the use of a macro processor to simpllfy how you write the description.
+For now, think of a URDF as a list of parts, called **links** and a list of descriptions
+about how those links are connected, called **joints**.
+We will start by creating a URDF that describes a two wheeled robot with a
+square body. We will use the ROS tool called **rviz2** to visualize the URDF.
+
+After that, we will add more complexity and eventually add in the use of a macro processor
+to simpllfy how you write the description.
 
 ## Step 1: Creating your first URDF file
 
-A URDF file is an XML file. You can create one using a text editor. Let's begin with this simple URDF file which is in the [1.urdf](../../description/urdf/1.urdf) file.
+A URDF file is an XML file. You can create one using a simple text editor or an IDE toole
+that aids you in writing an XML format file.
+Let's begin with this simple URDF file which is in the
+[1.urdf](../../description/urdf/1.urdf) file.
 
 ```xml
 <?xml version="1.0"?>
