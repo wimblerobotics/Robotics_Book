@@ -68,7 +68,7 @@ A URDF file is an [XML](https://www.w3schools.com/xml/) file. You can create one
       </geometry>
     </visual>
   </link>
-  <joint name="wheel_joint" type="continuous">
+  <joint name="left_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="left_wheel"/>
     <origin xyz="0 -0.29 -0.13" rpy="1.5708 0 0"/>
@@ -98,8 +98,6 @@ URDF file:
 
 ![alt text](../media/1.png)
 
-*
-
 To see the visualization yourself, you can run the following command:
 
 ```bash
@@ -120,12 +118,50 @@ The `name` attribute is the name of the robot.
 The robot description ends with `</robot>` in the last line of the file.
 
 Next come link and joint pairs.
-Remember that link elements define real, physical components of the robot and joint elements define how those links are connected. In this case, we have three links: `base_link`, `left_wheel`, and `right_wheel`. We also have two joints: `wheel_joint` and `right_wheel_joint`.
+Remember that link elements define real, physical components of the robot and joint elements
+define how those links are connected.
+In this file, we have three links:
+`base_link`, `left_wheel`, and `right_wheel`.
+We also have two joints: `left_wheel_joint` and `right_wheel_joint`.
+
+Let's look at the first link, which describes the square box forming the body of the robot:
+
+```xml
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.5 0.5 0.25"/>
+      </geometry>
+      <pose>0 0 0.125 0 0 0</pose>
+    </visual>
+  </link>
+```
 
 The name `base_link` is chosen because the ROS [rep 105](https://www.ros.org/reps/rep-0105.html)
-suggests that the base link should be the name of the link that is fixed to the world. I'll explain what that means later on.
+suggests that the base link should be the name of the link that is fixed to the world.
+I'll explain what that means later on.
 
-The `base_link` link is a box with dimensions 0.5 x 0.5 x 0.25. The `left_wheel` and `right_wheel` links are cylinders with a radius of 0.1 and a length of 0.05. The `wheel_joint` and `right_wheel_joint` joints connect the `base_link` to the `left_wheel` and `right_wheel` links, respectively. The `wheel_joint` joint is located at the front of the robot, and the `right_wheel_joint` joint is located at the back of the robot.
+The `base_link` link is a box with dimensions of 0.5 meters in the x (length) direction,
+0.5 meters in the y (width) direction, and 0.25 meters in the z (height) direction.
+
+Now look at one of the two wheels:
+
+```xml
+  <link name="left_wheel">
+    <visual>
+      <geometry>
+        <cylinder radius="0.1" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+```
+
+The `left_wheel` is a cylinder with a radius of 0.1 meters and a length of 0.05 meters.
+The left and right wheels are physically identical, differing only where they are attached
+to the body of the robot, so the *link* for the `right_wheel` is the same as that for
+the `left_wheel`
+
+The `wheel_joint` and `right_wheel_joint` joints connect the `base_link` to the `left_wheel` and `right_wheel` links, respectively. The `wheel_joint` joint is located at the front of the robot, and the `right_wheel_joint` joint is located at the back of the robot.
 
 The `origin` element specifies the position and orientation of the link or joint relative to its parent. The `axis` element specifies the axis of rotation for the joint.
 
