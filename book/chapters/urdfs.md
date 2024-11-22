@@ -96,7 +96,9 @@ here is what the UDR file looks like using the *rviz2* tool, though the image is
 slice of what *rviz2* can show, and *rviz2* can do much more than simply visualize this
 URDF file:
 
-![alt text](../media/1.png)*
+![alt text](../media/1.png)
+
+*
 
 To see the visualization yourself, you can run the following command:
 
