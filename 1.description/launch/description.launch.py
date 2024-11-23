@@ -25,7 +25,7 @@ from launch.actions import OpaqueFunction
 
 
 def launch_robot_state_publisher(context, file_name_var):
-    description_directory_path = get_package_share_directory('description')
+    description_directory_path = get_package_share_directory('1.description')
     file_name = context.perform_substitution(file_name_var)
     print(F"file_name: {file_name}")
     xacro_file_path = os.path.join(description_directory_path, 'urdf', file_name)
@@ -57,7 +57,7 @@ def generate_launch_description():
 
     ld = LaunchDescription(launch_args)
 
-    description_directory_path = get_package_share_directory('description')
+    description_directory_path = get_package_share_directory('1.description')
 
     ld.add_action(DeclareLaunchArgument(
         name='do_rviz',
