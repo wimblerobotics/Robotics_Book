@@ -206,7 +206,7 @@ A *frame* is a way to describe a location in space but also corresponds to a *fr
 a point of view for seeing the world.
 
 In the *rviz2* image above, the *base_link* is the frame of reference for the robot and we are looking
-at the world from that point of view, even though the camera is positioned
+at the world from that point of view, even though the "viewing camera" is positioned
 off to the side of the robot.
 In that image, you can see a grid off white lines showing the *plane* of the *base_link*.
 Notice that the *base_link* is at the center of the robot.
@@ -235,71 +235,132 @@ a quarter of a meter.
 The robot wants to move so it is nearly touching the cone just in front of the position that the camera sees.
 The camera tells the robot that the cone is just over one meter straight ahead.
 If the robot where to travel straight ahead, it wouldn't be in front of the cone at all.
-The robot needs to know where the cone is in relation to the robot's body, not the camera's body.
+The robot needs to know where the cone is in relation to the robot's circular body, not the camera's body.
 
 This is where *frames* and *transforms* come in. When ROS looks at the URDF describing the robot body and the
 camera, it can figure out how to translate any pixel location from the camera's frame of reference to the
 location that the pixel represents in the robot body's frame of reference. The would be true even if the camera
 were twisted or turned or mounted in a different position. The URDF would describe the new position of the camera.
 
-The software that moves the robot computes the needed path based upon the location of the center of the 
+The software that moves the robot computes the needed path based upon the location of the center of the
 robot's body, not the camera's body.
 ROS can translate the location of the cone from the camera's frame of reference to the robot's frame of reference,
-telling the robot that, from the robot's body point of view, the cone is just about a quarter meter the left and a just over a meter in front.
+telling the robot that, from the robot body's point of view, the cone is just about a quarter meter the left and a
+just over a meter in front.
 
-## Step 2: Adding a caster wheel
+In the image above, so you know, the upper left quadrant is a simulation of a circular robot with a camera mounted
+on the front left, looking at a traffic cone, all within the simulation of a house.
+This image is provided by the *gazebo* simulator, which is a powerful tool for simulating robots in a virtual world.
+The upper right quadrant is also from *gazebo* and shows the picture from the camera. The lower left quadrant is
+that same camera image but visualized with the *rviz2* tools The lower right quadrant is also from *rviz2* and shows
+a visualization of the robot, the laser scan as yellow dots, the direction of the front of the robot as a red arrow and a "cost map" in
+shades of light blue and pink. This is will be explained in a later chapter.
 
-Now let's add a caster wheel to the robot. The caster wheel will be a sphere that is connected to the back of the robot. Here is the updated URDF file, which is in the [2.urdf](../../description/urdf/2.urdf) file.
+## Another frame example
+
+Now consider our simple robot with the square body and two wheels but we will add in a "map" of the world.
+When you want to autonomously move our robot using ROS, you will need to provide a map of the world and
+a way to know where the robot is in the world on that map.
+This will be covered later on in the book, but for now we will just add a fake map as a motivation to talk
+about frames.
+
+In addition to introducing a map, we will also add one more link to the robot, a "base_footprint" link.
+By convention, the "base_footprint" link is the link that is at the bottom of the robot, it corresponds
+to the floor or ground for our robot. The wheels sit atop the base_footprint.
+
+To add a base_footprint to our URDF, we will add the following:
 
 ```xml
-<?xml version="1.0"?>
-<robot name="simple_robot">
-  <link name="base_link">
+  <!-- Here is the base_footprint -->
+  <material name="blue">
+    <color rgba="0 0 1 1"/>
+  </material>
+  <link name="base_footprint">
     <visual>
       <geometry>
-        <box size="0.5 0.5 0.25"/>
+        <box size="0.5 0.5 0.001"/>
       </geometry>
-      <pose>0 0 0.125 0 0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
+      <material name="blue"/>
     </visual>
   </link>
-  <link name="left_wheel">
-    <visual>
-      <geometry>
-        <cylinder radius="0.1" length="0.05"/>
-      </geometry>
-    </visual>
-  </link>
-  <joint name="wheel_joint" type="continuous">
+
+  <joint name="base_footprint_joint" type="fixed">
     <parent link="base_link"/>
-    <child link="left_wheel"/>
-    <origin xyz="0 -0.29 -0.13" rpy="1.5708 0 0"/>
-    <axis xyz="0 1 0"/>
+    <child link="base_footprint"/>
+    <origin xyz="0 0 -0.23" rpy="0 0 0"/>
   </joint>
-  <link name="right_wheel">
+```
+
+The *base_footprint* link is a box that the same width and length of the robot body, but only one thousandth of a meter
+thick and colored blue.
+The blue coloring is achieved by first defining a new element called *material* and then using that material
+in the *visual* element for the *base_footprint* link.
+The *base_footprint_joint* is a *fixed* joint, meaning that the two links are fixed in relation to each other
+and cannot move, unlike the wheel joints which are *continuous* and can rotate.
+The *base_footprint* is placed 0.23 meters below the center of the *base_link* using the *origin* element.
+This nicely places the base_footprint at the bottom of the robot, where the floor should be.
+By making the *base_footprint* link the same size as the robot body, and positioning as I did,
+*base_footprint* looks like shadow of the robot cast onto the floor in the *rviz2* tool.
+
+If we were to look at the robot model now with the new *base_footprint* link, it would look like this:
+
+![Showing a shadow of the robot on the floor](../media/Screenshot_base_footprint.png)
+
+To add a fake map to the visualization, we add the following to the URDF:
+
+```xml
+  <!-- Here is a fake map -->
+  <link name="map">
     <visual>
       <geometry>
-        <cylinder radius="0.1" length="0.05"/>
+        <mesh filename="package://description_2/meshes/map1.dae"/>
       </geometry>
+      <pose>0 0 0.0 0 0 0</pose>
     </visual>
   </link>
-  <joint name="right_wheel_joint" type="continuous">
+
+   <joint name="map_joint" type="fixed">
     <parent link="base_link"/>
-    <child link="right_wheel"/>
-    <origin xyz="0 0.29 -0.13" rpy="1.5708 0 0"/>
-    <axis xyz="0 1 0"/>
+    <child link="map"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
   </joint>
-  <link name="caster_wheel">
-    <visual>
-      <geometry>
-        <sphere radius="0.1"/>
-      </geometry>
-    </visual>
-  </link>
-  <joint name="caster_wheel_joint" type="continuous">
-    <parent link="base_link"/>
-    <child link="caster_wheel"/>
-    <origin xyz="0 0 -0.13" rpy="0 0 0"/>
-    <axis xyz="0 0 1"/>
+```
+
+The *map* link is a mesh, which is a 3D object, in this case a simple plane.
+I'm not going to explain meshes now, nor how I created this. The actual mest is in the git repository
+at ![description_2/meshes/map1.dae](../../description_2/meshes/map1.dae).
+
+The important thing to note for now is that the map is a fixed joint to the *base_link* and is placed at the same
+height as the *base_link* and is centered on the *base_link*. If you were to visualize this in *rviz2*, you would
+see:
+
+![map visualized at base_link](../media/Screenshot_map_at_base_link.png)
+
+The map corresponds to the same map shown in the simulation image previously shown.
+Since it is fixed to *base_link*, it will appear at the same height as halfway up the depth of the robot body,
+which makes it hide everything below the halfway point up the robot body.
+
+Aesthetically, it would be better to have the map at the same height as the floor, which is the *base_footprint*
+frame of reference. To do this, we would change the *parent* link of the *map_joint* to be *base_footprint* instead of
+*base_link*. This is a simple change to the URDF like so:
+  
+```xml
+  <joint name="map_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="map"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
   </joint>
-</robot>
+```
+
+Which would make the map appear as if it were on the floor, as shown here:
+
+![map visualized at base_footprint](../media/Screenshot_map_at_base_footprint.png)
+
+You can see the *map* at *base_link* visualization by running the following command:
+
+```bash
+cd ~/wr_book_ws # Change this if you have a different workspace name
+source install/setup.bash
+./src/Robotics_Book/description_2/scripts/3.sh 
 ```
