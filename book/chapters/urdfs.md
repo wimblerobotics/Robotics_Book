@@ -201,7 +201,7 @@ right wheel is placed 0.29 meters to the right of the center of the *base_link*.
 
 It's important to understand frames of reference and how they are used in ROS.
 Probably the most important concepts in ROS are *topics*, *frames* and *transforms*.
-A *topic* is a way to send data from one node to another and will be covered in a later chapter,
+A *topic* is a way to send data from one *node* to another and will be covered in a later chapter,
 along with *nodes*.
 A *frame* is a way to describe a location in space but also corresponds to a *frame of reference*,
 a point of view for seeing the world.
@@ -209,7 +209,7 @@ a point of view for seeing the world.
 In the *rviz2* image above, the *base_link* is the frame of reference for the robot and we are looking
 at the world from that point of view, even though the "viewing camera" is positioned
 off to the side of the robot.
-In that image, you can see a grid off white lines showing the *plane* of the *base_link*.
+In that image, you can see a grid off white lines showing the *plane* of the *base_link* frame.
 Notice that the *base_link* is at the center of the robot.
 The frame always corresponds to the center of the *link* object.
 
@@ -241,7 +241,7 @@ The robot needs to know where the cone is in relation to the robot's circular bo
 This is where *frames* and *transforms* come in. When ROS looks at the URDF describing the robot body and the
 camera, it can figure out how to translate any pixel location from the camera's frame of reference to the
 location that the pixel represents in the robot body's frame of reference. The would be true even if the camera
-were twisted or turned or mounted in a different position. The URDF would describe the new position of the camera.
+were twisted or turned or mounted in a different position. The URDF would only need to describe the new position of the camera.
 
 The software that moves the robot computes the needed path based upon the location of the center of the
 robot's body, not the camera's body.
@@ -330,7 +330,9 @@ To add a fake map to the visualization, we add the following to the URDF:
 
 The *map* link is a mesh, which is a 3D object, in this case a simple plane.
 I'm not going to explain meshes now, nor how I created this. The actual mesh is in the git repository
-at ![description_2/meshes/map1.dae](../../description_2/meshes/map1.dae).
+at 
+
+![description_2/meshes/map1.dae](../../description_2/meshes/map1.dae).
 
 The important thing to note for now is that the map is a fixed joint to the *base_link* and is placed at the same
 height as the *base_link* and is centered on the *base_link*. If you were to visualize this in *rviz2*, you would
