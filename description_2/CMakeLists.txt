@@ -12,7 +12,7 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 cmake_minimum_required(VERSION 3.5)
-project(1.description)
+project(description_2)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)

@@ -15,7 +15,7 @@
       </geometry>
     </visual>
   </link>
-  <joint name="wheel_joint" type="continuous">
+  <joint name="left_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="left_wheel"/>
     <origin xyz="0 -0.29 -0.13" rpy="1.5708 0 0"/>
@@ -33,6 +33,39 @@
     <child link="right_wheel"/>
     <origin xyz="0 0.29 -0.13" rpy="1.5708 0 0"/>
     <axis xyz="0 1 0"/>
+  </joint>
+  <link name="map">
+    <visual>
+      <geometry>
+        <mesh filename="package://description_2/meshes/map1.dae"/>
+      </geometry>
+      <pose>0 0 0.0 0 0 0</pose>
+    </visual>
+  </link>
+
+  <!--- new from description_1 -->
+  <material name="blue">
+    <color rgba="0 0 1 1"/>
+  </material>
+  <joint name="map_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="map"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="base_footprint">
+    <visual>
+      <geometry>
+        <box size="1 1 0.001"/>
+      </geometry>
+      <pose>0 0 0 0 0 0</pose>
+      <material name="blue"/>
+    </visual>
+  </link>
+
+  <joint name="base_footprint_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_footprint"/>
+    <origin xyz="0 0 -0.23" rpy="0 0 0"/>
   </joint>
 
 </robot>
