@@ -362,5 +362,13 @@ You can see the *map* at *base_link* visualization by running the following comm
 ```bash
 cd ~/wr_book_ws # Change this if you have a different workspace name
 source install/setup.bash
-./src/Robotics_Book/description_2/scripts/3.sh 
+./src/Robotics_Book/description_2/scripts/2.sh 
+```
+
+And you can see the *map* at *base_footprint* visualization by running the following command:
+
+```bash
+cd ~/wr_book_ws # Change this if you have a different workspace name
+source install/setup.bash
+./src/Robotics_Book/description_2/scripts/2.sh 
 ```

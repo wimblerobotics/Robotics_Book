@@ -34,6 +34,9 @@
     <origin xyz="0 0.29 -0.13" rpy="1.5708 0 0"/>
     <axis xyz="0 1 0"/>
   </joint>
+ 
+  <!--- new from description_1 -->
+  <!-- Here is a fake map -->
   <link name="map">
     <visual>
       <geometry>
@@ -43,19 +46,20 @@
     </visual>
   </link>
 
-  <!--- new from description_1 -->
-  <material name="blue">
-    <color rgba="0 0 1 1"/>
-  </material>
-  <joint name="map_joint" type="fixed">
+   <joint name="map_joint" type="fixed">
     <parent link="base_link"/>
     <child link="map"/>
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </joint>
+
+  <!-- Here is the base_footprint -->
+  <material name="blue">
+    <color rgba="0 0 1 1"/>
+  </material>
   <link name="base_footprint">
     <visual>
       <geometry>
-        <box size="1 1 0.001"/>
+        <box size="0.5 0.5 0.001"/>
       </geometry>
       <pose>0 0 0 0 0 0</pose>
       <material name="blue"/>

@@ -55,7 +55,7 @@
   <link name="base_footprint">
     <visual>
       <geometry>
-        <box size="1 1 0.001"/>
+        <box size="0.5 0.5 0.001"/>
       </geometry>
       <pose>0 0 0 0 0 0</pose>
       <material name="blue"/>
