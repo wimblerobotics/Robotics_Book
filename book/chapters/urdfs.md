@@ -49,7 +49,7 @@ how you write the description.
 
 ## Step 1: The first URDF file
 
-A URDF file is an [XML](https://www.w3schools.com/xml/) file. You can create one using any text editor or with an IDE that makes it easy to create valid XML code. Let's begin with this simple URDF which is in the [1.urdf](../../description/urdf/1.urdf) file.
+A URDF file is an [XML](https://www.w3schools.com/xml/) file. You can create one using any text editor or with an IDE that makes it easy to create valid XML code. Let's begin with this simple URDF which is in the [1.urdf](../../description_1/urdf/1.urdf) file.
 
 ```xml
 <?xml version="1.0"?>
@@ -105,7 +105,7 @@ To see the visualization yourself, you can run the following command:
 cd ~/wr_book_ws # Change this if you have a different workspace name
 colcon build --symlink-install
 source install/setup.bash
-ros2 launch description description.launch.py urdf_file_name:="1.urdf"
+./install/description_1/share/description_1/scripts/1.sh
 ```
 
 ## Explaining 1.urdf
@@ -176,13 +176,14 @@ Lets begin with how the left wheel connects to the body of the robot:
 
 A *joint* is a connection between two *links*. One end of the connection is called the *parent*
 link and the other is called the child link.
-The order is important as the *origin* describes how the child is placed in relation to the parent.
-Here, the *left_wheel* is placed 0.29 meters to the left of the center of the *base_link* and
-0.13 meters below the center of the *base_link*.
-The wheel is at the center of the *base_link* in the x direction.
+The parent/child choice is important as the *origin* describes how the child is placed in relation to the parent.
+Here, the *left_wheel* is placed 0.29 meters to the left of the center of the *base_link*
+(i.e. in the y-axis direction) and
+0.13 meters below the center of the *base_link* (i.e. in the z-axis direction).
+The wheel is at the center of the *base_link* along the x-axis direction.
 
 Without the *rpy*, the wheel would be pointed upwards, lying parallel to the ground, just like the body of the robot.
-The *rpy* (roll, pitch and yaw orienetation in radians) says to rotate the wheel 90 degrees (1.5708 radians) about the
+The *rpy* (roll, pitch and yaw orientation in radians) says to rotate the wheel 90 degrees (1.5708 radians) about the
 x axis relative to the body of the robot so that the wheel is upright as you would expect.
 
 The *axis* element describes the axis of rotation for the joint, which is the y axis in this case,
@@ -328,7 +329,7 @@ To add a fake map to the visualization, we add the following to the URDF:
 ```
 
 The *map* link is a mesh, which is a 3D object, in this case a simple plane.
-I'm not going to explain meshes now, nor how I created this. The actual mest is in the git repository
+I'm not going to explain meshes now, nor how I created this. The actual mesh is in the git repository
 at ![description_2/meshes/map1.dae](../../description_2/meshes/map1.dae).
 
 The important thing to note for now is that the map is a fixed joint to the *base_link* and is placed at the same
