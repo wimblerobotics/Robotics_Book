@@ -20,11 +20,11 @@ to be made to the code to get it to work with the latest version of ROS.
 Still, the concepts should be widly applicable.
 
 You need to have ROS2 Jazzy Jalisco installed on your computer. Look, for example at the
-ROS2 installation instructions^[https://docs.ros.org/en/jazzy/Installation.html] for how to install ROS2 on your computer.
+ROS2 installation instructions^[See: https://docs.ros.org/en/jazzy/Installation.html] for how to install ROS2 on your computer.
 
 You also need to have a workspace set up for this book. You can use the following commands to set up a workspace for this book.
 I'm assuming you will name the workspace `wr_book_ws`, but you can name it whatever you want.
-It will be up to you to change any references in this book from wr_book_ws to whatever you name your workspace.
+It will be up to you to change any references in this book from wr_book_ws to whatever you name the book workspace.
 
 ```bash
 # Do the following if you haven't already created a workspace for this book code.

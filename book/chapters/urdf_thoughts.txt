@@ -1,0 +1,95 @@
+Part I: Introduction to URDF
+Chapter 1: What is URDF?
+
+Definition and purpose
+Example URDF and visualization
+
+Importance in robotics
+Overview of URDF in ROS
+
+
+XML basics
+Structure of a URDF file
+Common tags and attributes
+Chapter 4: Creating Your First URDF
+
+Defining a simple robot
+Adding links and joints
+Visualizing the robot in RViz
+Part III: Visual and Collision Elements
+Chapter 5: Adding Visual Elements
+
+Visual elements in URDF
+Using basic shapes (box, cylinder, sphere)
+Using meshes and textures
+Chapter 6: Adding Collision Elements
+
+Collision elements in URDF
+Defining collision geometry
+Using simplified shapes for collision
+Part IV: Inertial Properties and Dynamics
+Chapter 7: Defining Inertial Properties
+
+Importance of inertial properties
+Adding mass, inertia, and center of mass
+Tools for calculating inertial properties
+Chapter 8: Adding Dynamics to Joints
+
+Joint dynamics in URDF
+Defining joint limits, damping, and friction
+Using transmission tags for actuators
+Part V: Advanced URDF Concepts
+Chapter 9: Using Xacro for Modular URDFs
+
+Introduction to Xacro
+Benefits of using Xacro
+Creating modular URDFs with Xacro
+Chapter 10: Creating Complex Robot Models
+
+Building multi-link robots
+Adding sensors and actuators
+Visualizing complex robots in RViz
+Part VI: Simulation and Visualization
+Chapter 11: Integrating URDF with Gazebo
+
+Setting up Gazebo with ROS
+Using URDF in Gazebo simulations
+Adding plugins for sensors and controllers
+Chapter 12: Advanced Visualization with RViz
+
+Customizing RViz displays
+Visualizing sensor data
+Using RViz for debugging URDFs
+Part VII: Practical Applications
+Chapter 13: Building a Wheeled Robot
+
+Defining the base and wheels
+Adding sensors and actuators
+Visualizing and testing in RViz and Gazebo
+Chapter 14: Building a Robotic Arm
+
+Defining links and joints
+Adding end effectors
+Visualizing and testing in RViz and Gazebo
+Part VIII: Best Practices and Troubleshooting
+Chapter 15: Best Practices for URDF Development
+
+Coding standards and conventions
+Debugging URDF files
+Performance optimization
+Chapter 16: Troubleshooting Common Issues
+
+Common errors and solutions
+Tips for debugging URDFs
+Resources for further help
+Part IX: Appendices
+Appendix A: URDF Reference
+
+Detailed reference for URDF tags and attributes
+Examples and usage
+Appendix B: Tools and Resources
+
+Tools for creating and editing URDFs
+Additional reading and resources
+ROS community and support
+By covering these topics, your book will provide a comprehensive guide to understanding and using URDFs in ROS, from basic concepts to advanced applications and best practices.
