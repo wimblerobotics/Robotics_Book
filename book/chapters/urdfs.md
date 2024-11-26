@@ -101,7 +101,7 @@ To see the visualization yourself, you can run the following command:
 cd ~/wr_book_ws # Change this if you have a different workspace name
 colcon build --symlink-install
 source install/setup.bash
-ros2 launch description description.launch.py urdf_file_name:="1.urdf"
+./install/description_1/share/description_1/scripts/1.sh
 ```
 
 ## Explaining 1.urdf
@@ -248,7 +248,7 @@ The robot needs to know where the cone is in relation to the robot's circular bo
 This is where `frames` and `transforms` come in. When ROS looks at the URDF describing the robot body and the
 camera, it can figure out how to translate any pixel location from the camera's frame of reference to the
 location that the pixel represents in the robot body's frame of reference. The would be true even if the camera
-were twisted or turned or mounted in a different position. The URDF would describe the new position of the camera.
+were twisted or turned or mounted in a different position. The URDF would only need to describe the new position of the camera.
 
 The software that moves the robot computes the needed path based upon the location of the center of the
 robot's body, not the camera's body.
