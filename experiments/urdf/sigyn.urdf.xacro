@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="Sigyn">
+  <self_collide>false</self_collide>
+  <pose>0 0 0.2 0 0 0</pose>
+  <static>false</static>
+  <xacro:arg name="use_ros2_control" default="true" />
+  <xacro:arg name="sim_mode" default="false" />
+
+  <xacro:include filename="$(find experiments)/urdf/common_macros.xacro" />
+  <xacro:include filename="$(find experiments)/urdf/inertials.xacro" />
+  <xacro:property name="props" value="${xacro.load_yaml('sigyn_config.yaml')}" />
+  <xacro:include filename="$(find experiments)/urdf/sigyn_base_macro.urdf.xacro" />
+  <xacro:include filename="$(find experiments)/urdf/sigyn_caster_wheel_macro.urdf.xacro" />
+  <xacro:include filename="$(find experiments)/urdf/sigyn_wheels_macro.urdf.xacro" />
+
+  <xacro:if value="$(arg use_ros2_control)">
+    <xacro:include filename="ros2_control.xacro" />
+  </xacro:if>
+
+  <!-- <xacro:unless value="$(arg use_ros2_control)">
+    <xacro:include filename="gazebo_control.xacro" />
+  </xacro:unless> -->
+
+  <!-- Make the body-->
+  <xacro:sigyn_base body_props="${props.body}" wheels_props="${props.wheels}" />
+
+  <!-- Make the wheels-->
+  <xacro:wheels config="${props}" instances="${props.wheels.instances}" />
+
+  <!-- Make the caster wheel -->
+  <xacro:caster_wheel config="${props}" />
+
+  <xacro:include filename="$(find experiments)/urdf/ld06.urdf.xacro" />
+  <xacro:include filename="$(find experiments)/urdf/gazebo.urdf.xacro" />
+  <xacro:ld06 lidar_prefix="top_lidar">
+    <origin xyz="0.155 0 0.300" rpy="0 0 -${pi / 2}" />
+  </xacro:ld06>
+
+  <xacro:diff_drive_controller config="${props}" instances1="${props.wheels.instances}" instances2="${props.wheels.instances}" />
+</robot>
