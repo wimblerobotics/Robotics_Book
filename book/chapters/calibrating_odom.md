@@ -237,7 +237,7 @@ Here are the steps.
 
 1. Place the robot in a known position and orientation.
 Before you move the robot, mark its current position.
-The easy way to do this is to use your phone with a built-in compass app, or to mark the robot's
+The easy way to do this is to use your phone with a built-in compass app and place the phone on the surface of your robot and don't move it until you are done calibrating, or to mark the robot's
 current position with a piece of tape by putting it on the ground beside one of the wheels
 at the bottom of the wheel where it touches the ground.
 You are going to rotate the robot in place and you want to try to rotate the robot 360 degrees
@@ -276,13 +276,15 @@ in place, getting the marked wheel back to the original position.
    With more lines after the ***covariance*** line. There will be other differences as well.
    The information you want to capture is the ***w*** and ***z***  values under ***orientation***.
    This is the current position of the robot.
+   
    If this is the beginning of the calibration, you should place the ***w*** and ***z*** values into
    the spreadsheet on line 2.
    As mentioned above, you should always note the current distance between the wheels in column ***A***.
    You will next rotate the robot in place and, ideally, only the ***w*** and ***z*** values will change noticeably.
 
-1. Rotate the robot in place 360 degrees. The way I do this is to use the ***teleop_keyboard_twist**
-package, like so:
+   If you are using a compass to track rotation, you can use the ***G*** column to note the compass heading.
+
+1. Rotate the robot in place 360 degrees. The way I do this is to use the ***teleop_keyboard_twist** package, like so:
 
    ```code
    ros2 run teleop_twist_keyboard teleop_twist_keyboard
@@ -304,14 +306,14 @@ package, like so:
 
 1. Using the spreadsheet that I provided put the original values of ***w***
    and ***z*** from step 2 into the spreadsheet
-   into the next and it will calculate the rotation reported by the odom topic.
+   into the next row and it will calculate the rotation reported by the odom topic.
    Column ***D*** shows the reported heading of the robot from the ***odom*** topic.
    Column ***E*** shows the reported rotation in radians of the robot from the ***odom*** topic.
-   Column ***F*** shows the deviation in degrees from the expected 360 degree rotation.
+   Column ***F*** shows reported rotation in degrees. This value should be close to 360 or 0.
 
-1. If the deviation in degrees in column ***F*** is greater than 360 degrees, you will need
+1. If the deviation in degrees in column ***F*** is greater than 360 degrees (i.e. a positive value), you will need
    to increase the configured distance between the wheels.
-   If the deviation in degrees in column ***F*** is less than 360 degrees, you will need
+   If the deviation in degrees in column ***F*** is less than 360 degrees (i.e. a negative value), you will need
   to decrease the configured distance between the wheels.
    You could calculate the new distance between the wheels by multiplying the current distance between the wheels by the ratio of the actual
    rotation to the odom rotation.
