@@ -233,13 +233,15 @@ By keeping track of the distance between the wheels for each rotation test, you 
 making the configuration distance between the wheels larger or smaller to get a smaller error in the actual versus
 the expected rotation.
 
+Here are the steps.
+
 1. Place the robot in a known position and orientation.
 Before you move the robot, mark its current position.
 The easy way to do this is to use your phone with a built-in compass app, or to mark the robot's
-current position with a piece of tape by putting it on the ground aside one of the wheels
+current position with a piece of tape by putting it on the ground beside one of the wheels
 at the bottom of the wheel where it touches the ground.
 You are going to rotate the robot in place and you want to try to rotate the robot 360 degrees
-in place, getting the wheel back to the same position.
+in place, getting the marked wheel back to the original position.
 
 1. Read the current odometry value via the following command.
   Replace the ***/odom*** topic with the topic that your odometry is published on.
@@ -290,9 +292,9 @@ package, like so:
    or the ***j*** key to rotate anticlockwise and then after the robot has rotated 360 degrees, press the
    ***k*** key to stop the robot.
    I found that I needed to jog the robot a bit to get to an accurate 360 degree rotation.
-   This I did by pressing the ***j*** or ***l*** key for a short time and then pressing the ***k**
+   This I did by pressing the ***j*** or ***l*** key for a short time and then pressing the ***k***
    key to stop the robot.
-   Remember you are trying to get to the point where the compass is back to the same value as when you started,
+   Remember you are trying to get to the point where the compass is back to the same value as when you started the 360 degree rotation,
    if you are using a compass to measure rotation, or to where the bottom of the wheel is back to the same
   position as when you started.
 
@@ -300,10 +302,25 @@ package, like so:
    If your robot is a well designed, 2-wheel differential drive robot, the ***x*** and ***y*** values under ***position**
     should not have changed much from the values captured in step 2, nor should the ***x*** and ***y*** values under ***orientation***.
 
-1. The easiest way to measure the actual odom rotation is to use the spreadsheet that I have provided.
-   You can find it at [book/media/CalibratingRotation.ods](book/media/CalibratingRotation.ods), which is a LibreCalc spreadsheet. Put the original values of ***w*** and ***z*** from step 2 into the spreadsheet
-   in row 2 and put the new values of ***w*** and ***z*** into row 3 and it will calculate the
-   rotation reported by the odom topic.
+1. Using the spreadsheet that I provided put the original values of ***w***
+   and ***z*** from step 2 into the spreadsheet
+   into the next and it will calculate the rotation reported by the odom topic.
    Column ***D*** shows the reported heading of the robot from the ***odom*** topic.
    Column ***E*** shows the reported rotation in radians of the robot from the ***odom*** topic.
-   Column ***f*** shows the deviation in degrees from the expected 360 degree rotation.
+   Column ***F*** shows the deviation in degrees from the expected 360 degree rotation.
+
+1. If the deviation in degrees in column ***F*** is greater than 360 degrees, you will need
+   to increase the configured distance between the wheels.
+   If the deviation in degrees in column ***F*** is less than 360 degrees, you will need
+  to decrease the configured distance between the wheels.
+   You could calculate the new distance between the wheels by multiplying the current distance between the wheels by the ratio of the actual
+   rotation to the odom rotation.
+   If that is too much math, you could just add or subtract a small amount to the current distance between the wheels value.
+
+1. Repeat the process until the odom rotation and the actual rotation are as close as possible.
+    What you are likely to find is that as you change the distance between the wheels value, you will end up with
+    finding that the actual rotation is sometimes a little bit bigger and sometimes a little bit smaller
+    than the odom rotation as you repeat the test.
+    When you change the distance between the wheels to a larger or smaller value, the error in the two rotations
+    will tend to be larger than with the old distance between the wheels value. This will likely be the best you can do
+    for calibrating the distance between the wheels.
