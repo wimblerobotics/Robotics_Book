@@ -52,3 +52,5 @@ CATKIN_IGNORE
 
 # Mac file system stuff
 .DS_Store
+
+.~*

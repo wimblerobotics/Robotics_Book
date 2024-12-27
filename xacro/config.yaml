@@ -1,0 +1,10 @@
+a: 'hello world'
+robot:
+  name: "robby"
+  description: "A robot"
+  version: "0.1"
+  wheels:
+    - name: "wheel1"
+      diameter: 0.1
+    - name: "wheel2"
+      diameter: 0.2

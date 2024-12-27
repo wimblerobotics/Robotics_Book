@@ -1,0 +1,12 @@
+---
+title: "ROS for Mere Mortals"
+author: "Michael Wimble"
+date: "2025-01-01"
+geometry: "margin=0.3in"
+header-includes:
+  - \usepackage{minted}
+  - \usemintedstyle{friendly}
+  - \definecolor{bgcolor}{rgb}{0.95,0.1,0.95}
+  - \setminted{bgcolor=bgcolor, frame=lines, framesep=2mm, fontsize=\small}
+
+---
