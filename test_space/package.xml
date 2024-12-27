@@ -3,7 +3,7 @@
 <package format="3">
   <name>test_space</name>
   <version>1.0.0</version>
-  <description>'description' package for section 1</description>
+  <description>'A place to test things</description>
   <maintainer email="mike@wimblerobotics.com">Michael Wimble</maintainer>
   <license>GPLv3S</license>
 

@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="simple_robot">
+  <xacro:property name="radius" value="0.05" />
+  <xacro:property name="width" value="0.0254" />
+  <xacro:property name="side" value="left" />
+  <xacro:property name="axis" value="1" />
+  <xacro:property name="pos_x" value="0.5" />
+  <xacro:property name="pos_y" value="0.5" />
+  <xacro:property name="pos_z" value="0.5" />
+  <xacro:property name="mass_kg" value="1.0" />
+  <xacro:property name="pi" value="3.14159265359" />
+
+
+  <!-- base_link-->
+  <link name="base_link" />
+  <joint name="base_to_chassis" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <child link="chassis" />
+    <parent link="base_link" />
+  </joint>
+
+  <link name="chassis">
+    <collision>
+      <geometry>
+        <cylinder radius="${0.2286}" length="${0.3}" />
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 ${(0.3/2)}" />
+    </collision>
+    <visual>
+      <geometry>
+        <cylinder radius="${0.2286}" length="${0.3}" />
+      </geometry>
+      <material name="body_aluminum">
+        <color rgba="0.516 0.527 0.535 1" />
+      </material>
+      <origin rpy="0 0 0" xyz="0 0 ${(0.3 / 2)}" />
+    </visual>
+    <!-- <xacro:solid_cylinder_inertial rpy="0 0 0" xyz="-0.05 0 0.05" mass_kg="${body_props.mass}" radius="${0.2286}" length="${0.3}" /> -->
+  </link>
+
+  <!-- Here is the base_footprint -->
+  <material name="base_footprint_color">
+    <color rgba=".2 .2 1 1"/>
+  </material>
+
+  <link name="base_footprint">
+    <visual>
+      <geometry>
+        <box size="0.5 0.5 0.001"/>
+      </geometry>
+      <pose>0 0 0 0 0 0</pose>
+      <material name="base_footprint_color"/>
+    </visual>
+  </link>
+
+  <joint name="base_footprint_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_footprint"/>
+    <origin xyz="0 0 -0.23" rpy="0 0 0"/>
+  </joint>
+
+  <!-- wheel-->
+  <link name="${side}_wheel_link">
+    <visual name="tire">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="${radius}" length="${width - 0.004}" />
+      </geometry>
+      <material name="left_wheel_link_color">
+        <color rgba="0.15 0.15 0.15 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="${radius}" length="${width - 0.004}" />
+      </geometry>
+    </collision>
+    <!-- <xacro:solid_cylinder_inertial rpy="${pi/2} 0 0" xyz="0 0 0" mass_kg="${mass_kg}" radius="${radius}" length="${width}" /> -->
+  </link>
+
+  <joint name="${side}_wheel_joint" type="continuous">
+    <axis xyz="0 0 ${axis}" />
+    <parent link="base_link" />
+    <child link="${side}_wheel_link" />
+    <origin xyz="${pos_x} ${pos_y} ${pos_z}" rpy="${-axis * pi / 2} 0 0" />
+  </joint>
+
+  <!-- Create the wheel hub -->
+  <link name="${side}_wheel_hub">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <visual>
+      <geometry>
+        <cylinder radius="${radius - 0.02}" length="${width - 0.002}" />
+      </geometry>
+      <material name="${side}_wheel_hub">
+        <color rgba="0.2 1.0 0.2 1.0"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="${side}_wheel_hub_joint" type="fixed">
+    <axis xyz="0 0 ${axis}" />
+    <parent link="${side}_wheel_link" />
+    <child link="${side}_wheel_hub" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <!-- Create the wheel marker -->
+  <link name="${side}_wheel_marker">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <visual>
+      <geometry>
+        <box size="0.01 ${(radius / 2)} ${width}" />
+      </geometry>
+      <material name="${side}_wheel_marker">
+        <color rgba="0.86 0.54 0.86 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="${side}_wheel_marker_joint" type="fixed">
+    <parent link="${side}_wheel_hub" />
+    <child link="${side}_wheel_marker" />
+    <origin xyz="0 ${(radius - 0.02) / 2} 0" rpy="0 0 0" />
+  </joint>
+
+</robot>
