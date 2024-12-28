@@ -224,7 +224,7 @@ Don't assume that when it works once that you're done.
 Try it several times, maybe a dozen times.
 You may even find that odometry is accurate when, say, turning left but is off when turning right.
 
-To make this process easier, I've provided a LibreCalc spreadsheet that will help you calculate the
+To make this process easier, I've provided a LibreOffice Calc spreadsheet that will help you calculate the
 error in rotation of the robot.
 It can be found in the workspace at [src/Robotics_Book/book/media/CalibratingRotation.ods](src/Robotics_Book/book/media/CalibratingRotation.ods).
 
@@ -308,7 +308,7 @@ in place, getting the marked wheel back to the original position.
    If your robot is a well-designed, 2-wheel differential drive robot, the ***x*** and ***y*** values under ***orientation***
     should also have not changed much from the values captured in step 2, nor should the ***x*** and ***y*** values under ***position***.
 
-1. Using the spreadsheet that I provided, put the new values of ***w***
+1. Using the LibreOffice Calc spreadsheet that I provided, put the new values of ***w***
    and ***z*** from step 4 into the spreadsheet into the ***Odom W*** and ***Odom Z*** cells.
    The ***Heading Radians*** shows the reported current heading of the robot from the ***odom*** topic.
    The ***Rotated Radians*** shows the reported rotation in radians of the robot from the ***odom*** topic.
