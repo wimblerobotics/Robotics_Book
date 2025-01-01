@@ -1,0 +1,117 @@
+
+clear;ros2 topic echo --once /wheel_odom | sed -n '16,17p;18q';ros2 topic echo /roboclaw_status --once | sed -n -E 's/.*Encoder_Left"\:(\-?[0-9]+),"Encoder_Right"\:(\-?[0-9]+).*/\1 \2/p'
+
+rotation start encoder: -7715, end encoder: 11585, ticks per revolution: 19300
+enocder ticks per wheel revolution: 974.1
+wheel revolutions per robot turn: 19300 / 974.1 = 19.8
+wheel diameter: 0.1m.
+wheel circumference: 0.314m.
+wheel turn distance = 19.8  revolutions * 0.314m per revolution = 6.22m
+
+
+robot base radius = 9 inches = 0.2286m
+robot base circumference = 2 * pi * 0.2286m = 1.435m
+
+quad pulses per meter = 1566
+quad pulses per revolution = 1566 * 0.314m = 491.724
+
+Traveled 1.123m
+ticks = 10585 - 7103 = 3482
+Ticks / meter = 3482/1.123 = 3100.8
+Ticks / revolution = 3100.8 * 0.314 = 974.1
+
+Travel#2
+Distance = 1.135
+Ticks = 10585 - 7054 = 3531
+Ticks / meter = 3531 / 1.135 = 3112.8
+Ticks / revolution = 3112.8 * 0.314 = 977.3
+
+168 degrees, left encoder 7054
+1 revolution, left encoder: 3179
+ticks per revolution ccw = 7054 - 3179 = 3875
+-8103 - -4231 = 3872 ticks per revolution  for right wheel
+3133 ticks per meter / 3875 ticks per revolution = 0.809 meters per robot revolution
+0.809 / (2 * pi) = 0.129 meters robot radius
+0.128 / 0.0254 = 5.08 inches robot radius
+
+
+----
+Ticks / meter = 3113
+Ticks / revolution = 3113 * 0.314 = 977.3
+
+9 * .0254 = 0.2286m = robot body radius
+wheel distance from center is more like 0.2 m.
+0.2 * 2 * pi = 1.256m per revolution for wheel Travel
+1.256 m * 3113 ticks per meter = 3920 ticks per revolution
+3875 tickes per revolution /
+
+
+
+The robot wheels are 0.1m in diameter, 0.314m in circumference.
+The robot wheel base is 0.2m in radius, 1.256m in circumference.
+The robot wheel encoders click 3875 ticks per revolution
+3875 ticks per revolution / 3113 tickes per meter = 1.246 meters per robot revolution
+1.246 meters per revolution / 2 * pi = 0.198 meters per robot radius
+
+
+
+header:
+  stamp:
+    sec: 1735524228
+    nanosec: 351000000
+  frame_id: odom
+child_frame_id: base_footprint
+pose:
+  pose:
+    position:
+      x: 0.00039624038618057966
+      y: -0.0008584200404584408
+      z: 0.0
+    orientation:
+      x: 0.0
+      y: 0.0
+      z: -0.31959065794944763
+      w: 0.9475557208061218
+  covariance:
+  - 0.001
+4294935812,
+4294935707,
+
+
+21 ticks / 1000 ticks per revolution = 0.021 revolution
+0.21 * (2 * pi) = 0.132 radians of revolution
+0.132 radians of revolution / 0.09 seconds = 1.467 radians per second z velocity
+
+angular z = -0.357 radians/sec
+vel_dt = 0.09 seconds
+0.357 * 0.09 = 0.032 radians of revolution
+
+(21/3875)=0.005 revolutions
+(2*pi)*0.005 = 0.031 radians of revolution
+observed angular z = 0.032 radians of revolution
+
+0.1m * pi = 0.314m per revolution
+(21 ticks / 1000 ticks per revolution) = 0.021 revolutions. 0.021 revolution / 0.090 ms = 0.233 revolutions per second. 
+0.233 revolutions per second * 60 = 14 revolutions per minute. 14 revolutions per minute * 0.314m per revolution = 4.4 m/s
+0.09 sec / 60 = 0.0015 minutes
+((21 / 1000) / 0.0015) = 14 revolutions per minute
+
+122 rpm * 0.314m per revolution = 38.3 m/minute = 1.428 mph
+
+
+
+
+Rotation was too big by 4.89 degrees.
+4.89/360 = 0.01358333333 correction factor
+0.01358333333 * .396 = 0.005379 meters correction distance
+0.396 - 0.0053 = 0.3906 new wheel distance
+
+1 tick / 10000 ticks per revolution = 0.0001 revolution
+0.0001 revolution * 0.314m per revolution = 0.0000314m of wheel movement per tick 
+0.396 * pi = 1.243m per revolution
+.0000314m / 1.243m per revolution = 0.0000253 revolutions per tick
+2 * pi * 0.000253 = 0.000158 radians of revolution per tick
+1.243 m per revolution / 0.396m = 3.14 revolut
+differenc in circumference between 0.396 and 0.3906 = 0.0043432157 meters
+each tick travels 0.314159/1000=0.000314159 meters
+1.243m / 360 * 1.65 = 0.0043432157

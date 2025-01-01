@@ -3,12 +3,13 @@
 ## Why calibrate your odometry?
 
 The odometry of a robot is the measure of the robot's position and orientation (pose) in space.
-It is usually calculated by integrating the robot's velocity over time.
+Odometry values usually come from the motor driver for your robot.
+They are usually calculated by integrating the robot's velocity over time.
 This happens by sampling the rotation of the wheels as sensed by the wheel encoders.
-Knowing the rotation of each wheel in radians, the wheel radius, and the time between samples,
+Knowing the amount of time between samples, the rotation of each wheel in radians during that time, and the wheel radius,
 you can calculate the distance traveled and the velocity of each wheel during
 that sample interval.
-By knowing the distance between the wheels, you can calculate the arc or line the robot traveled during the sample interval.
+By also knowing the distance between the wheels, you can calculate the arc or line the robot traveled during the sample interval.
 By integrating these arcs or lines, you can calculate the robot's pose over time relative to where the robot was when it started up.
 
 Note that correct integration relies on sampling happening over short distances.
@@ -21,12 +22,14 @@ But wheel odometry is not perfect.
 There are errors in the measurements of the wheel encoders, such as noisy signals which may
 undercount or overcount the 'ticks' from the wheel encoders.
 The sampling interval is not precisely known.
-There are errors in the math used for the computation of the integration of the velocity.
+There are errors in the digital math used for the computation of the integration of the velocity.
 These errors can accumulate over time and cause the odometry to drift away from its actual pose.
-Also, odometry is an estimate of the robot's actual movement.
-The robot usually does not move exactly as predicted by the wheel encoders.
+So, odometry is an estimate of the robot's actual movement.
+Even that estimate is unlikely to exactly match the movement that was expected given the commands
+issued to move the robot.
 
-If the errors are too large or the odometry reports don't come in fast enough, the ability to create a map of the environment or to navigate through it can be compromised.
+If the errors are too large or the odometry reports don't come in fast enough,
+the ability to create a map of the environment or to navigate through it can be compromised.
 
 Odometry as described relies especially on two fundamental physical measurements of the robot:
 the wheel radius and the distance between the wheels.
@@ -35,11 +38,13 @@ The effective wheel radius may change as the tire wears, or as the wheel tilts,
 or depend on the kind of surface the robot is moving on.
 Even knowing the wheel radius, the odometry may still be off if the wheel radius is not the same for both wheels.
 Robot wheels often slip on the ground as they turn, and usually in an unpredictable way.
+Odometry doesn't report how the robot actually moved, it reports how the robot was expected to move, given
+the wheel encoders' readings.
 
 The distance between the wheels is harder to estimate, and it is usually the source of the largest errors in odometry.
 The distance between the wheels can be estimated by measuring the distance between the wheel centers,
 but this is not always accurate and is affected by several factors.
-Tires are usually not , and the point of contact with the ground may change for a number of reasons,
+Tires are usually not flat, and the point of contact with the ground may change for a number of reasons,
 so it is hard to know where the contact distance between wheels is.
 The distance may be different when the robot is moving in a straight line versus when making
 a left turn versus when making a right turn.
@@ -72,21 +77,25 @@ The process is usually done by driving the robot in a controlled way and compari
 to the actual pose of the robot.
 
 The following methodology assumes you are calibrating a two-wheel, differential drive robot.
-You should be able to generalize this process for a different kind of robot.
+You should be able to generalize this process for a different kind of robot, though it will involve a bit of mathematics.
+You might, for instance, look at [Kinematics for Wheeled Mobile Robots](https://nu-msr.github.io/navigation_site/lectures/derive_kinematics.html))
 
 ## How to calibrate your odometry
 
 I usually separate the calibration of the two measurements.
-The process is fundamentally the same for correcting the wheel radius and the distance between the wheels,
-but correcting the distance between the wheels can involve different equipment (well, a compass versus a scale)
-and a lot more iterations of the process.
+The process is fundamentally the same for correcting the wheel radius and the distance between the wheels.
+For correcting the wheel radius, you will need a tape measure.
+For correcting the distance between the wheels, you will need a compass and/or mark the position of the wheels
+of the robot where they contact the ground and rotate the robot in place until the wheels are back in the same position.
 
 The steps involved in both calibrations are, basically:
 
 * Place the robot in a known pose.
 * Read the odometry at the beginning of the iteration.
 * Move the robot in a known way that should be affected primarily by just one of the
-wheel radii or the distance between the wheels.
+wheel radii or the distance between the wheels. 
+Odometry from driving forward or backward is mostly affected by the wheel radius.
+Odometry from spinng the robot in place is mostly affected by the distance between the wheels.
 * Read the odometry at the end of the iteration.
 * Compare the actual pose of the robot to the reported odometry.
 * Adjust the software values for the wheel radius or the distance between the wheels.
@@ -226,7 +235,7 @@ You may even find that odometry is accurate when, say, turning left but is off w
 
 To make this process easier, I've provided a LibreOffice Calc spreadsheet that will help you calculate the
 error in rotation of the robot.
-It can be found in the workspace at [src/Robotics_Book/book/media/CalibratingRotation.ods](src/Robotics_Book/book/media/CalibratingRotation.ods).
+It can be found in the workspace at [src/Robotics_Book/book/media/CalibratingRotation.ods](../media/CalibratingRotation.ods).
 
 Each time you are going to do a rotation, put the current distance between the wheels into the spreadsheet
 in the ***Wheel Spacing*** column. This is just for documentation purposes.
@@ -242,7 +251,8 @@ Here are the steps:
 
 1. Place the robot in a known pose.
 Before you move the robot, mark its current position.
-The easy way to do this is to use your phone with a built-in compass app and place the phone on the surface of your robot and don't move it until you are done calibrating, or to mark the robot's
+The easy way to do this is to use your phone with a built-in compass app and place the phone on the surface
+of your robot and don't move it until you are done calibrating, or to mark the robot's
 current position with a piece of tape by putting it on the ground beside one of the wheels
 at the bottom of the wheel where it touches the ground.
 You are going to rotate the robot in place and you want to try to rotate the robot 360 degrees
@@ -304,25 +314,53 @@ in place, getting the marked wheel back to the original position.
    pressing the ***k*** key to stop the robot.
    Remember, you are trying to get the robot back to the point where it was when you started the 360-degree rotation.
 
-1. As above, read the current odometry value again and capture the ***w*** and ***z*** values under ***orientation***.
+2. As above, read the current odometry value again and capture the ***w*** and ***z*** values under ***orientation***.
    If your robot is a well-designed, 2-wheel differential drive robot, the ***x*** and ***y*** values under ***orientation***
     should also have not changed much from the values captured in step 2, nor should the ***x*** and ***y*** values under ***position***.
 
-1. Using the LibreOffice Calc spreadsheet that I provided, put the new values of ***w***
+3. Using the LibreOffice Calc spreadsheet that I provided, put the new values of ***w***
    and ***z*** from step 4 into the spreadsheet into the ***Odom W*** and ***Odom Z*** cells.
    The ***Heading Radians*** shows the reported current heading of the robot from the ***odom*** topic.
    The ***Rotated Radians*** shows the reported rotation in radians of the robot from the ***odom*** topic.
    The ***Rotated Degrees*** shows reported rotation in degrees&mdash;this value should be close to 360 or 0.
 
-1. If ***Rotated Degrees*** value is more than 360 or 0 degrees, you will need
-   to increase the configured distance between the wheels.
-   If ***Rotated Degrees*** is less than 360 or 0 degrees, you will need
+4. If ***Rotated Degrees*** value is a positive number, you will need
    to decrease the configured distance between the wheels.
-   You could calculate the new distance between the wheels by multiplying the current distance between the wheels by the ratio of the actual
-   rotation to the odometry rotation.
-   If that is too much math, you could just add or subtract a small amount to the current distance between the wheels value.
+   If ***Rotated Degrees*** is a negative number, you will need
+   to decrease the configured distance between the wheels.
+   You could calculate the new distance between the wheels by multiplying the current distance between
+   the wheels by the ratio of the actual rotation to the odometry rotation.
+   If that is too much math, you could just try adding or subtracting a small amount to the current distance between the wheels value.
+   Here is an example of how to calculate the new distance between the wheels.
 
-1. Repeat the process until the odometry rotation and the actual rotation are as close as possible.
+   For an example of how to calculate a new wheel distance, look at the following snapshot from when I calibrated my robot.
+   
+   ![An example of correcting the wheel distance by calculation](../media/calibrating_wheel_distance.png)
+   
+   The first attempt at a 360 degree rotation with a wheel distance of 0.396 meters
+   showed an error of 4.89 degrees, as shown in the ***Rorated Degrees*** column for row 2.
+   That is, measuring the angle from the quaternion before rotation of w,x,y,z={1.0, 0.0, 0.0, 0.0} and
+   the quaternion after rotation of w,x,y,z={-0.999, 0.0, 0.0, 0.0144} is 0.0854 radians or 4.89 degrees.
+   Since the robot rotated 360 degrees, the quaternions should result in the same angle before and
+   after rotation.
+
+   Since this was a positive error, I needed to decrease the distance between the wheels for the next attempt.
+   The proportional amount to correct is the 4.89 degrees divided by the actual 360 degrees of rotation I made,
+   which comes out to be a multiplier of 0.01358333333.
+   Multiplying this by the current distance between the wheels, 0.3960 meters, give gives 0.005379 which,
+   when subtraced from 0.3960 gives 0.3906 meters as the corrected distance to try for the next run.
+   
+   I put this new distance of 0.3906 as the wheel distance into my robot and rotated it again 360
+   degrees. As you see from row 3, the resulting odometry is off by only 1.65 degrees, which is a smaller error than the previous run.
+   For my robot, the error of only 1.65 degrees represents about 18 ticks of the wheel encoders, or about 6 degrees of one wheel rotation.
+   My robot made about 4 wheel rotations to get the robot to rotate 360 degrees, or 1440 degrees of wheel rotation.
+   Begin off 1.65 degrees after rotating 1440 degrees is about a 0.1% error.
+   This, to me, was a good calibration of the distance between the wheels.
+
+   ```code
+   ```
+
+5. Repeat the process until the odometry rotation and the actual rotation are as close as possible.
    What you are likely to find is that the ***Rotated Degrees*** gets closer and closer to the ideal 360 or
     0 degrees as you change the distance between the wheels value, and then as you make further changes in
     the same direction (smaller or larger between iterations), the ***Rotated Degrees*** will start to
