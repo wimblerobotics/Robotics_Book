@@ -292,18 +292,18 @@ Before you move the robot, mark its current position.
 The easy way to do this is to use your phone with a built-in compass app and place the phone on the surface
 of your robot and don't move it until you are done calibrating. 
 Since a phone's compass doesn't have a lot of precision or repeatability, a better way is to mark the robot's
-current position with a piece of tape by putting it on the ground beside one of the wheels
+current position with a piece of tape by putting it on the ground beside one or both of the wheels
 at the bottom of the wheel where it touches the ground. What I do is use a small jeweler's square and place it
-so that the short edge is on the floor in and place the long edge next to a mark I've made on the robot body.
+so that the short edge is on the floor the long edge is next to a mark I've made on the robot body.
 Make sure the rotation of the robot won't knock the jeweler's square from it's position.
 You are going to rotate the robot in place and you want to try to rotate the robot 360 degrees
-in place, getting the marked wheel back to the original position.
+in place, getting the robot's body to the original position.
 
 1. Read the current odometry value via the following command.
   Replace the ***/odom*** topic with the topic that your odometry is published on.
 
    ```code
-   ros2 topic echo --once --flow-style /odom
+   ros2 topic echo /wheel_odom --once | head -17
    ```
 
    You will see output something like:
@@ -326,10 +326,8 @@ in place, getting the marked wheel back to the original position.
       y: 0.0
       z: 5.0907089586332814e-20
       w: 1.0
-   covariance:
    ```
 
-   With more lines after the ***covariance*** line. There will be other differences as well.
    The information you want to capture is the ***w*** and ***z***  values under ***orientation***.
    This is the current heading of the robot.
 
@@ -338,10 +336,9 @@ in place, getting the marked wheel back to the original position.
    in the ***Wheel Spacing*** column.
    You will next rotate the robot in place and, ideally, only the ***w*** and ***z*** values will change noticeably.
 
-   If you are using a compass to track rotation, you can use the ***Compass Heading*** column to note the compass heading before
-   you do the rotation.
-
-1. Rotate the robot in place 360 degrees. The way I do this is to use the ***teleop_keyboard_twist** package, like so:
+1. Rotate the robot in place 360 degrees.
+   Use the marks you set above (compass, tape, square) to stop the robot when it has rotated exactly 360 degrees.
+   The way I do this is to use the ***teleop_keyboard_twist** package, like so:
 
    ```code
    ros2 run teleop_twist_keyboard teleop_twist_keyboard
@@ -355,54 +352,45 @@ in place, getting the marked wheel back to the original position.
    pressing the ***k*** key to stop the robot.
    Remember, you are trying to get the robot back to the point where it was when you started the 360-degree rotation.
 
-2. As above, read the current odometry value again and capture the ***w*** and ***z*** values under ***orientation***.
+1. As above, read the current odometry value again and capture the ***w*** and ***z*** values under ***orientation***.
    If your robot is a well-designed, 2-wheel differential drive robot, the ***x*** and ***y*** values under ***orientation***
     should also have not changed much from the values captured in step 2, nor should the ***x*** and ***y*** values under ***position***.
 
-3. Using the LibreOffice Calc spreadsheet that I provided, put the new values of ***w***
+1. Using the LibreOffice Calc spreadsheet that I provided, put the new values of ***w***
    and ***z*** from step 4 into the spreadsheet into the ***Odom W*** and ***Odom Z*** cells.
    The ***Heading Radians*** shows the reported current heading of the robot from the ***odom*** topic.
    The ***Rotated Radians*** shows the reported rotation in radians of the robot from the ***odom*** topic.
    The ***Rotated Degrees*** shows reported rotation in degrees&mdash;this value should be close to 360 or 0.
 
-4. If ***Rotated Degrees*** value is a positive number, you will need
+1. If ***Rotated Degrees*** value is a positive number, you will need
    to decrease the configured distance between the wheels.
    If ***Rotated Degrees*** is a negative number, you will need
    to decrease the configured distance between the wheels.
    You could calculate the new distance between the wheels by multiplying the current distance between
    the wheels by the ratio of the actual rotation to the odometry rotation.
-   If that is too much math, you could just try adding or subtracting a small amount to the current distance between the wheels value.
-   Here is an example of how to calculate the new distance between the wheels.
 
    For an example of how to calculate a new wheel distance, look at the following snapshot from when I calibrated my robot.
-   
+
    ![An example of correcting the wheel distance by calculation](../media/calibrating_wheel_distance.png)
-   
+
    The first attempt at a 360 degree rotation with a wheel distance of 0.396 meters
-   showed an error of 4.89 degrees, as shown in the ***Rorated Degrees*** column for row 2.
+   showed an error of 4.89 degrees, as shown in the ***Rotated Degrees*** column for row 2.
    That is, measuring the angle from the quaternion before rotation of w,x,y,z={1.0, 0.0, 0.0, 0.0} and
-   the quaternion after rotation of w,x,y,z={-0.999, 0.0, 0.0, 0.0144} is 0.0854 radians or 4.89 degrees.
-   Since the robot rotated 360 degrees, the quaternions should result in the same angle before and
-   after rotation.
+   the quaternion after rotation of w,x,y,z={-0.999, 0.0, 0.0, 0.0144} shows a rotation of 0.0854 radians or 4.89 degrees.
+   Since the robot rotated 360 degrees, the quaternions should have ended up with the heading angle before and
+   after the rotation.
 
    Since this was a positive error, I needed to decrease the distance between the wheels for the next attempt.
    The proportional amount to correct is the 4.89 degrees divided by the actual 360 degrees of rotation I made,
    which comes out to be a multiplier of 0.01358333333.
    Multiplying this by the current distance between the wheels, 0.3960 meters, give gives 0.005379 which,
    when subtraced from 0.3960 gives 0.3906 meters as the corrected distance to try for the next run.
-   
+
    I put this new distance of 0.3906 as the wheel distance into my robot and rotated it again 360
    degrees. As you see from row 3, the resulting odometry is off by only 1.65 degrees, which is a smaller error than the previous run.
    For my robot, the error of only 1.65 degrees represents about 18 ticks of the wheel encoders, or about 6 degrees of one wheel rotation.
    My robot made about 4 wheel rotations to get the robot to rotate 360 degrees, or 1440 degrees of wheel rotation.
-   Begin off 1.65 degrees after rotating 1440 degrees is about a 0.1% error.
+   Being off 1.65 degrees after rotating 1440 degrees is about a 0.1% error.
    This, to me, was a good calibration of the distance between the wheels.
 
-   ```code
-   ```
-
-5. Repeat the process until the odometry rotation and the actual rotation are as close as possible.
-   What you are likely to find is that the ***Rotated Degrees*** gets closer and closer to the ideal 360 or
-    0 degrees as you change the distance between the wheels value, and then as you make further changes in
-    the same direction (smaller or larger between iterations), the ***Rotated Degrees*** will start to
-    get further away from the ideal 360 or 0 degrees. Go back to the settings that gave you the smallest error.
+2. Repeat the process until the odometry rotation and the actual rotation are as close as possible.
