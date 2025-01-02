@@ -214,6 +214,7 @@ If this is so after, say, a dozen movements, forward and backward, you are done.
     [src/Robotics_Book/book/media/CalibratingWheelDiameter.ods](../media/CalibratingWheelDiameter.ods).
 
     The following shows a screenshot of me using the spreadsheet for just that scenario.
+    
     ![Measuring effective wheel diameter before correction](../media/wheel_diameter_calibration_before.png)
     
     My starting wheel diameter was 0.12 meters.
