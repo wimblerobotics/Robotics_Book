@@ -7,5 +7,6 @@ ros_main_components_and_concepts.md \
 a_bit_about_packages_and_nodes.md \
 creating_your_first_workspace_and_package.md \
 calibrating_odom.md \
+navigating_with_rviz.md \
 -o book.pdf --pdf-engine=xelatex --pdf-engine-opt=-shell-escape --highlight-style zenburn
 cd ../../../../

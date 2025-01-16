@@ -1,6 +1,6 @@
 Your launch file launches the nav2 stack with the following nodes:
 * bt_navigator::bt_navigator
-  This reads an amo file describing which navigator plugins to use.
+  This reads an yaml file describing which navigator plugins to use.
   It includes a NavigateToPose plugin.
   It instantiates a NavigateToPoseActionServer.
   * Gathers

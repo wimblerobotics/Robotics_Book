@@ -1,4 +1,4 @@
-# Calibrating your odometry
+# Calibrating Your Odometry
 
 ## Why calibrate your odometry?
 
