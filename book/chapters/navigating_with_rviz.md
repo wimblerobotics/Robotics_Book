@@ -2,10 +2,10 @@
 
 ## Using rviz2 to Move Your Robot to a Pose
 
-When you fire up ***rviz2*** after having launched your robot and the ***nav2
-stack***, you can cause your robot to move towards a pose that you establish
-by clicking and dragging your mouse. You select the ***Nav2 Goal*** tab
-in the ***rviz2*** menu, then click on the location you want your robot to
+When you fire up ***rviz2*** after having launched your robot and the ***nav2 stack***,
+you can cause your robot to move towards a pose that you establish
+by clicking and dragging your mouse in the rviz2 window that shows the map.
+To do so, you select the ***Nav2 Goal*** tab in the ***rviz2*** menu, then click on the location you want your robot to
 move to, and, while the mouse is still down, drag your mouse to establish the
 direction you want your robot to point when it gets to that position.
 You see the result as something like the thick, green arrow shown in
@@ -118,15 +118,47 @@ node boxes, since any node can only have one and only one parent.
 And, again, importantly, there is exactly one node that has no parent, and
 that is the ***root node***.
 
-```code
+## An Introduction to Behavior Trees by a Real Example
 
+First, a brief overview of the language we use when talking about ***behavior trees***.
+As we discussed above, a ***behavior tree*** has a set of ***nodes*** that are connected together.
+A ***node*** is interpreted, or executed if you like, by ***ticking*** the ***node***.
+A ***node*** responds by trying to do whatever behavior it was designed to do and responding
+with one of three statuses describing how that try went: ***success***, ***failure***, or ***running***.
+* ***Success*** is kind of obvious—it indicates that the ***node*** managed to do what it said on
+the box and is done doing all its work.
+
+* A ***Failure*** response is also obvious—the node was unable to completely accomplish what it
+was supposed to do and has given up doing any more work.
+There may been side effects along the way, such as the robot
+smashing into something and damaging it.
+Unless a ***node*** has indicated otherwise in its documentation, you shouldn't expect that the ***node*** is going
+to try to cleanup after itself.
+You can use the ***behavior tree*** itself, however, to do
+any cleanup as you'll come to see as you better understand
+how ***behavior trees*** work.
+
+* ***Running*** is less obvious. ***nodes*** must complete their work quickly. If they cannot,
+if it will take a bit of time, or even a lot of time to complete it's designed work, then the
+***node*** should start doing its work in the background and return ***Running*** every time
+the ***node*** is ticked until it finally finishes trying to do its work. When finished, the
+next time the ***node*** is ticked, it will finally respond with ***Success*** or ***Failure***.
+
+***Nodes*** also have an `name` attribute that should be used to give the human reader an idea about what the node is trying to accomplish.
+
+With that background in mind, here is the default behavior tree provided by the ***nav2 stack*** for navigating to a pose.
+It's written in XML.
+My assumption is that you can read an XML file and understand the terms ***element*** and ***attribute***.
+Let's go over the tree one element at a time.
+
+```code
 <!--
   This Behavior Tree replans the global path periodically at 1 Hz and it also has
   recovery actions specific to planning / control as well as general system issues.
   This will be continuous if a kinematically valid planner is selected.
 -->
 <root BTCPP_format="4" main_tree_to_execute="MainTree">
-  <BehaviorTree ID="MainTree">
+  <[BehaviorTree](https://www.behaviortree.dev) ID="MainTree">
     <RecoveryNode number_of_retries="6" name="NavigateRecovery">
       <PipelineSequence name="NavigateWithReplanning">
         <ControllerSelector selected_controller="{selected_controller}" default_controller="FollowPath" topic_name="controller_selector"/>
@@ -171,4 +203,73 @@ that is the ***root node***.
 </root>
 ```
 
+Below is the same tree shown graphically using the ![***Groot***](https://www.behaviortree.dev) program.
+
 ![Default behavior tree for navitating to a pose](../media/default_bt_nav_to_pose.png)
+
+The ***root node*** must be a `root` element. Currently it should have a `BTCPP_format` attribute value of 4.
+It should name the `BehaviorTree` element to be used as the starting ***behavior tree***.
+This allows multiple ***behavior trees*** to be located in the same XML file and the interpreter
+of the tree knows which one to use at the start.
+
+There must be at least one `BehaviorTree` element in the XML file and exactly one should also have an `ID` attribute
+matching that named in the `root` element. The `BehaviorTree` element must be a child of the `root` element.
+
+So far, what we've seen is just structural. Now lets get into some meat of the ***behavior tree***. 
+A ***BehaviorTree*** element must have exactly one child element. In this case, it's a `RecoverNode` element.
+
+Semantically, a `RecoveryNode` element must have exactly two children. 
+The first child is represents what should be accomplished and second child represents some action to take if the first child fails—it's does some recovery behavior that
+tries to clear whatever made the first child fail.
+
+The behavior of the `RecoveryNode` then is to try to execute the first child—or you might think of it as
+trying to perform the behavior represented by the first child.
+If the first child succeeds, the `RecoveryNode` is done and it also succeeds.
+If the first child fails, though, the second child is executed.
+If the second child succeeds, then the expectation is that it likely cleared whatever caused the
+first child to fail, so the `RecoveryNode` should go ahead and
+ retry the first child.
+
+A `RecoveryNode` has a `number_of_retries` parameter that specifies how many times it should attempt the
+try-to-do-first-child/recover-using-second-child pair before it finally gives up.
+
+The first child of the ***NavigateRecovery*** `RecoveryNode` is a `PipelineSequence` node called ***NavigateWithReplanning*** and the second child is a `SequenceNode`.
+Without further examination, we can guess that the ***NavigateRecover*** node is going to try to navigate (i.e. move the robot), doing some replanning along the way as the robot moves,
+and if some problem comes up, there will be some sequence of behaviors that will be tried in order to clean up whatever was preventing the robot move moving towards the goal.
+
+A `PipelineSequence` node is a tricky node if you're not used to the concept of how some computer systems implement a ***pipeline*** operation.
+A ***pipeline*** is a list of things that are connected together such that the first things feeds something to the second thing that may or may not operate on that input but the second thing then feeds something to the third thing which may or may not operate on its input and so on.
+Whatever the first thing in the pipeline produces kind of gets pushed through all the things down the line.
+
+More formally, the ***nav2 stack*** `PipelineSequence` node here begins by ***ticking*** its first child until that child returns a ***Success*** status.
+Then the `PipelineSequence` ***ticks*** The first and second child until the second child returns ***Success***, then the first three children are ***ticked*** and so on until either all children report ***Sucesss*** or until one of them reports a ***Failure*** status.
+
+To interpret what is happening for the ***NavigateWithReplanning*** `PipelineSequence` node, it will select a controller (a piece of code that will be able to try to move the robot along a path), then select a planner (a piece of code that is able to find a best route to move the robot from one point on a map to another point on a map), and then some kind of behavior is going to be repeated once every second, and, finally, there will be some behavior that will attempt to follow a path, using some recovery behavior if necessary.
+
+As an aside here, because this is a `PipelineSequence` kind of node, this means that each time the ***NavigateWithReplanning*** node gets ***ticked*** (and it typically gets ***ticked*** about a hundred times a second), it gets to change its mind about whatever controller is used, and whatever planner is used and so on.
+
+Going back to the top ***NavigateRecovery*** node, if the
+***NavigateWithReplanning*** node fails, a recovery action will be tried. The recovery behavior is a `Sequence` node.
+
+A `Sequence` node simply will try the child nodes in order. The first child is ***ticked*** until it returns success, then it goes on to the second child which is ticked until it returns ***Success*** and so on. If any child of the `Sequence` node returns ***Failure***, the `Squence` node gives up and returns ***Failure*** itself.
+
+We can interpret the tree here to mean that some `Fallback` node will be attempted followed by a `ReactiveFallback` node.
+
+A `Fallback` node is similar to a `Sequence` node in that it can have any number of children.
+It is different in that the `Fallback` node will ***tick*** the first child and if that child fails, then the second child is ***ticked*** and if that fails the next child it ***ticked*** and so on.
+If any child returns ***Success***, the `Fallback` node stops ***ticking*** the children and itself returns ***Success***.
+
+We can interpret the behavior of the `Fallback` node as looking to see if a controller recovery would help. If not, would a planner recovery help. If one of those is true, then the parent `Sequence` node goes on to the `ReactiveFallback` node as part of the recovery of the ***NavigateRecovery*** node we started with.
+
+The `ReactiveFallback` node ***RecoveryFallback*** is similar in function to a `Fallback` kind of node except that the first child node (`GoalUpdated` in this case) constantly gets a chance to interrupt the second child if it suddenly succeeds.
+So, if the `GoalUpdated` node is true at any time, then the ***RecoveryFallback*** node will succeed, passing its success back up to the parent `Sequence` node which itself will pass the ***Success*** back up to the top level ***NavigateRecovery*** node.
+
+This make sense if you think about it. While the behavior tree was trying to recover from some condition that made it not be able to immediately plan a path and move the robot to the goal, it suddenly turns out that the user changed its mind about what goal to move towards, so the best thing to do is immediately abandon the effort to move to the old goal and start all over working on the new goal.
+
+Going back to the `RateController` node in the tree, we can interpret what this node is trying to achieve. Once a second, it wants to try to `ComputePathToPose`. 
+If, for some reason the code cannot find a path to the goal pose, like maybe the door out of the room is closed or someone is blocking the robot by standing in front of it, then the ***ComputePathToPose*** `RecoveryNode` will attempt to fix the problem by checking to see if `WouldAPlannerRecoveryHelp` is true and, if so, do `ClearEntireCostMap`.
+
+As long as once per second path from the current robot position to the goal pose is possible, then the "WithReplanning" part of the ***NavigateWithReplanning*** `PipelineSequence` is still working so the tree moves on to the ***FollowPath*** `RecoveryNode` which is the thing that is finally, actually going to cause the robot to move.
+
+The `FollowPath` node is the bit that sends ***cmd_vel*** topic messages to cause the robot to move. 
+If, for some reason, the code that does this fails, then a recovery sequence will be tried which test to see `WouldAControllerRecoveryHelp` and, if so, `ClearEntireCostMap` is used to clear out any transit cruft that may have accumulated in the cost map, such as the temporary obstacle caused by a person walking in front of the robot.
