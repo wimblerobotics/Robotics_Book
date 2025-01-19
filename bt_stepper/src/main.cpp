@@ -5,6 +5,34 @@
 
 #include "bt_stepper/SS.hpp"
 
+class CustomSequence : public BT::ControlNode {
+public:
+  CustomSequence(const std::string& name, const BT::NodeConfiguration& config)
+      : BT::ControlNode(name, config), current_child_idx_(0) {}
+
+  static BT::PortsList providedPorts() {
+    return {};
+  }
+
+  BT::NodeStatus tick() override {
+    const auto& children = this->children();
+    if (children.empty()) {
+      return BT::NodeStatus::SUCCESS;
+    }
+    if (current_child_idx_ >= children.size()) {
+      return BT::NodeStatus::SUCCESS;
+    }
+    auto child_status = children[current_child_idx_]->executeTick();
+    if (child_status != BT::NodeStatus::RUNNING) {
+      current_child_idx_++;
+    }
+    return child_status;
+  }
+
+private:
+  size_t current_child_idx_;
+};
+
 int main(int argc, char **argv) {
   rclcpp::init(argc, argv);
   auto node = rclcpp::Node::make_shared("bt_stepper_node");
@@ -17,8 +45,9 @@ int main(int argc, char **argv) {
 
   BT::BehaviorTreeFactory factory;
   factory.registerNodeType<bt_stepper::SS>("SS");
+  factory.registerNodeType<CustomSequence>("CustomSequence");
   auto tree = factory.createTreeFromFile(xml_path);
-  // node->declare_parameter("tick", "false");
+
   RCLCPP_INFO(node->get_logger(), "Starting manual BT ticks...");
 
   while (rclcpp::ok()) {
@@ -36,7 +65,9 @@ int main(int argc, char **argv) {
       RCLCPP_INFO(node->get_logger(), "Tick returned: %s",
                   BT::toStr(status).c_str());
       rclcpp::spin_some(node);
-      if (status != BT::NodeStatus::RUNNING) {
+      if (status != BT::NodeStatus::SUCCESS) {
+        RCLCPP_INFO(node->get_logger(), "Tick returned: %s",
+                    BT::toStr(status).c_str());
         break;
       }
       node->set_parameter(rclcpp::Parameter("tick", false));
