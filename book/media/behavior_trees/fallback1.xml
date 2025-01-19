@@ -1,0 +1,15 @@
+<root BTCPP_format="4" main_tree_to_execute="MainTree">
+    <BehaviorTree ID="MainTree">
+        <Fallback name="Must Get This Done">
+            <Try behavior="best" />
+            <Try behavior="as_for_forgivness_later"
+        </Fallback>
+    </BehaviorTree>
+    <TreeNodesModel>
+        <Action ID="Try">
+            <input_port default="best" name="behavior">
+                Which behavior to exhibit
+            </input_port>
+        </Action>
+    </TreeNodesModel>
+</root>

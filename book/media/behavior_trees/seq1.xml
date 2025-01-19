@@ -1,0 +1,15 @@
+<root BTCPP_format="4" main_tree_to_execute="MainTree">
+    <BehaviorTree ID="MainTree">
+        <Sequence name="If at first you don't succeed">
+            <Try behavior="Try the first time" />
+            <Try behavior="Try again" />
+        </Sequence>
+    </BehaviorTree>
+    <TreeNodesModel>
+        <Action ID="Try">
+            <input_port default="Try the first time" name="behavior">
+                Which behavior to exhibit
+            </input_port>
+        </Action>
+    </TreeNodesModel>
+</root>
