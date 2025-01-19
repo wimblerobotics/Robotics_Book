@@ -5,14 +5,30 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Attach to gdbserver",
+      "type": "cppdbg",
+      "request": "attach",
+      "MIMode": "gdb",
+      "miDebuggerServerAddress": "localhost:7890",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/install/bt_stepper/lib/bt_stepper/bt_stepper_node"
+    },
+    {
+      "name": "bt_stepper",
+      "type": "ros",
+      "request": "launch",
+      "target": "/home/ros/book_ws/install/base/share/bt_stepper/launch/bt_stepper.launch.py"
+    },
+    {
       "name": "ROS2x: Launch File",
-      "type": "python",
+      "type": "debugpy",
       "request": "launch",
       "program": "/opt/ros/jazzy/bin/ros2",
       "args": [
         "launch",
-        "description",
-        "description.launch.py"
+        "bt_stepper",
+        "bt_stepper.launch.py"
       ],
       "console": "integratedTerminal",
       "env": {
