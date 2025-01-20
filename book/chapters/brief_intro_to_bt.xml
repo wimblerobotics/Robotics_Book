@@ -1,0 +1,29 @@
+# A Brief Introduction to Behavior Trees
+
+ROS 2 provides a powerful tool for creating complex robot behaviors: the Behavior Tree.
+Behavior trees can be created by you as simple XML files and then used by the robot to execute complex behaviors.
+Look at this simple, hypothetical example of a behavior tree:
+
+```xml
+<RepeatUntilSuccessful>
+  <Fallback>
+    <MoralHasImproved/>
+    <GiveABeating/>
+  </Fallback>
+</RepeatUntilSuccessful>
+```
+This behavior tree will keep trying to improve the moral of the robot by beating it until moral has improved.
+
+To make the the discussion a bit easier to read, I will shorten the term "behavior tree" to "BT" from now on.
+
+## What is a Behavior Tree?
+
+A BT is composed of `nodes`. There are different kinds of nodes, such as `Action`, `Condition`, `Fallback`, `Sequence`, etc. 
+Each node has a specific role.
+As you might guess from the name, a BT is a tree structure, where the nodes are connected to each other in a hierarchical way.
+
+There are many types of nodes that can be used in a behavior tree, such as:
+* **Action**: These are nodes.
+* **Condition**: Represents a condition that must be met for the robot to continue executing the tree.
+* **Fallback
+* **Sequence

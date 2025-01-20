@@ -2,7 +2,7 @@
     <BehaviorTree ID="MainTree">
         <Fallback name="Must Get This Done">
             <Try behavior="best" />
-            <Try behavior="as_for_forgivness_later"
+            <Try behavior="ask_for_forgivness_later"
         </Fallback>
     </BehaviorTree>
     <TreeNodesModel>
