@@ -1,0 +1,16 @@
+<root BTCPP_format="4" main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <RepeatUntilSuccessful>
+      <Fallback>
+        <MoraleHasImproved/>
+        <GiveABeating/>
+      </Fallback>
+    </RepeatUntilSuccessful>
+  </BehaviorTree>
+  <TreeNodesModel>
+    <Action ID="MoraleHasImproved"/>
+    <Action ID="GiveABeating"/>
+    <Decorator ID="RepeatUntilSuccessful"
+               editable="true"/>
+  </TreeNodesModel>
+</root>

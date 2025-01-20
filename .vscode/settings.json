@@ -15,5 +15,8 @@
     "/home/ros/sigyn_ws/install/base/lib/python3.12/site-packages",
     "/opt/ros/jazzy/lib/python3.12/site-packages"
   ],
-  "cmake.sourceDirectory": "/home/ros/book_ws/src/Robotics_Book/description_2"
+  "cmake.sourceDirectory": "/home/ros/book_ws/src/Robotics_Book/description_2",
+  "markdownlint.config": {
+    "MD033": false
+  }
 }
