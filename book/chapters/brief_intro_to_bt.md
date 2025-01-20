@@ -1,7 +1,7 @@
 # A Brief Introduction to Behavior Trees
 
-ROS 2 provides a powerful tool for creating robot behaviors: the ***Behavior Tree***.
-Behavior trees can be created by you as simple XML files and then used by the robot to execute complex behaviors.
+ROS 2 provides a powerful tool for controlling the movement and behavior of robots: the ***Behavior Tree***.
+Behavior are simple XML files that you can create which can then be used to execute complex behaviors for the robot.
 Look at this simple, hypothetical example of a behavior tree:
 
 ```xml
@@ -31,22 +31,16 @@ To make the the discussion a bit easier to read, I will shorten the term ***beha
 
 A BT is composed of `nodes`. Graphically, think of `nodes` as the boxes in the [picture](#fig:beatings_will_continue) above.
 `Nodes` are connected to each other in a `parent` to `child` relationship, represented by the lines connecting the boxes in the picture.
-Every `node` has exactly one `parent`] and may have none, one, or multiple `children`.
+Every `node` has exactly one `parent` and may have none, one, or multiple `children`.
 Only one node in the tree has no parent, and that node is called the `root` node.
 
 There are four general categories of nodes that can be used in a behavior tree:
 
 * `Action` These are nodes that usually cause things to happen.
-   Examples of robot actions might be:
-  * `MoveForward`
-  * `FollowPath`
-  * `GoToDock`
+   Examples of action nodes might be: `MoveForward`, `FollowPath`, or `GoToDock`.
 * `Condition` Represents a condition that must be met for the robot to continue executing some part of the tree.
-  Examples of robot conditions might be:
-  * `IsBatteryLow`
-  * `IsDistanceTravelledGreaterThan`
-  * `IsRobotAtDock`
-* `Control` Controls the flow of execution.
+  Examples of condition nodes might be: `IsBatteryLow`, `IsDistanceTravelledGreaterThan`, or `IsRobotAtDock`.
+* `Control` nodes control the flow of execution.
   Examples of control nodes might be:
   * `Fallback` Represents a sequence of behaviors that are tried in order until one succeeds.
   * `RecoveryNode` Will try to recover from failure of the first child `node` by executing the second child `node`.
