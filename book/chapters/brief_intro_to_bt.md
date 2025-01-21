@@ -1,5 +1,17 @@
 # A Brief Introduction to Behavior Trees
 
+In this book, I'm only going to cover the basics of behavior trees as they apply to ROS 2.
+There is a somewhat large number of other places you can learn about ***behavior trees*** and I
+encourage you to explore them all, including:
+
+* [***5 Minute Behavior Tree tutorial***](https://youtu.be/KeShMInMjro?si=HT1SFtQrUzDMDt-x)  
+  ***Start here*** Petter Ögren, the creator of the BehaviorTree.CPP library, gives a quick overview of behavior trees.
+  He also has a fascinating series of papers and videos on how to use behavior trees to control robots.
+* [***Behavior Tree.CPP***](https://www.behaviortree.dev/)
+  This is the underlying library used by ROS 2 to implement behavior trees.
+* [***Integration with ROS2***](https://www.behaviortree.dev/docs/ros2_integration/)
+* [***Writing a New Behavior Tree Plugin***](https://docs.nav2.org/plugin_tutorials/docs/writing_new_bt_plugin.html)
+
 ROS 2 provides a powerful tool for controlling the movement and behavior of robots: the ***Behavior Tree***.
 They are simple XML files that you can create which can then be used to execute complex behaviors for the robot.
 Look at this simple, hypothetical example of a behavior tree:
@@ -38,7 +50,17 @@ Every node but one has exactly one parent and may have none, one, or multiple ch
 Only one node in the tree has no parent, and that node is called the `root` node.
 Nodes which have no children are called `leaf` nodes.
 
-There are four general categories of nodes that can be used in a behavior tree:
+And don't get me started on the use of he term "*node*" in most things computer related. Just in this chapter, nodes are:
+
+* The boxes in the graphical representation of a BT.
+* Sometimes used interchangeably with elements of an XML file.
+* The objects in the code that implement the behavior of the node.
+* A thread or process in ROS.
+
+So, when I mention ***node*** here I'm mean that thing there, you know what I mean.
+Don't be pedandic. Life will be much happier for you if you are not, and being pedantic won't get your money back for this book.
+
+There are four general categories of BT nodes that can be used in a behavior tree:
 
 * `Action` nodes usually cause things to happen. Action nodes are leaf nodes.
    Examples of action nodes might be: `MoveForward`, `FollowPath`, or `GoToDock`.
@@ -47,7 +69,6 @@ There are four general categories of nodes that can be used in a behavior tree:
 * `Control` nodes govern the flow of execution.
   Examples of control nodes might be:
   * `Fallback` The child nodes are a sequence of behaviors that are tried in order until one succeeds.
-  * `RecoveryNode` Will try to recover from failure of the first child node by executing the second child node.
   * `Sequence` Performs the behavior of the child nodes in order.
 * `Decorator` nodes modify the behavior of the child node.
   Examples of decorator nodes might be:
@@ -56,14 +77,14 @@ There are four general categories of nodes that can be used in a behavior tree:
   * `Inverter` Inverts the ***Success*** / ***Failure*** status of the child node.
 
 Every node in the tree is backed by a piece of code.
-There are a set of general nodes provided by the BT library, and additional, navigation specific nodes
-provided by the `nav2` package, but you can also create your own nodes.
-To create your own nodes, you will need to write your own code to implement the behavior of the node,
-following rules for class inheritance and use some macros to register the node with the BT library.
+There are a set of general nodes provided by the BT library, and additionally, navigation specific nodes
+provided by the `nav2` package, but you can also create your own BT nodes.
+To do so, you will need to write your own code to implement the desired behavior,
+following rules for class inheritance and use some macros to register the BT node with the BT library.
 
 ## How Does a Behavior Tree Work?
 
-A node represents some kind of behavior. A node performs its behavior when it receives a signal called `tick`.
+A BT node represents some kind of behavior. A node performs its behavior when it receives a signal called `tick`.
 Every time a node gets ticked, it should respond quickly with one of three states: `SUCCESS`, `FAILURE`, or `RUNNING`.
 Well, some nodes are not allowed to return all of those states, but we will get to that later.
 
@@ -74,7 +95,7 @@ Control and decorator nodes will tick their child nodes in some order and then d
 Eventually, some path of nodes in the tree results in some state being returned to the root node and
 the root node returns that state as the result of the tick.
 If the root node ends up returning ***RUNNING***, it will be ticked again, and the whole process will repeat until
-the root node returns ***SUCCESS*** or ***FAILURE***.
+the root node returns ***SUCCESS*** or ***FAILURE***. Read on an I hope to make this clearer
 
 All the nodes that get ticked are supposed to return a state quickly so that the BT can get ticked again, over and over, until
 the BT has reached some sort of conclusion.
@@ -91,9 +112,9 @@ wheels keep slipping and the robot doesn't seem to actually move forward, you ge
 
 ## A Simple Example of Node Tick and Response
 
-In the following example we have two kinds of nodes:
+In the following example we have two kinds of BT nodes:
 
-* `Sequence` is a control node that will tick its children in order.
+* `Sequence` is a Control node that will tick its children in order.
   Its a node type provided by the BT library and is frequently used when there are a series of actions that must be performed in order.
   Think of a possible hypothetical sequence needed for the robot to fetch you a beer from the refrigerator as:
   * Go to the refrigerator.
@@ -102,8 +123,8 @@ In the following example we have two kinds of nodes:
   * Grab the beer.
   * Close the refrigerator door.
   * Bring the beer to you.
-* `SS` is a custom action node that will print a message to the console when it is ticked.
-  Since this is a custom node, I had to write code to implement the behavior of the node.
+* `SS` is a custom Action node that will print a message to the console when it is ticked.
+  Since this is a custom BT node, I had to write code to implement the behavior of the node.
   The code, along with how to build a package for it, will be covered in a later in the book.
 
 Here is the real, complete XML for the behavior tree that we'll use to see what happens when the root node is ticked:
