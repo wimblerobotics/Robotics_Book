@@ -1,16 +1,15 @@
 <root BTCPP_format="4" main_tree_to_execute="MainTree">
   <BehaviorTree ID="MainTree">
-    <RepeatUntilSuccessful>
+    <RetryUntilSuccessful num_attempts="3000000000">
       <Fallback>
         <MoraleHasImproved/>
         <GiveABeating/>
       </Fallback>
-    </RepeatUntilSuccessful>
+    </RetryUntilSuccessful>
   </BehaviorTree>
   <TreeNodesModel>
-    <Action ID="MoraleHasImproved"/>
+    <Condition ID="MoraleHasImproved"/>
     <Action ID="GiveABeating"/>
-    <Decorator ID="RepeatUntilSuccessful"
-               editable="true"/>
+    <Decorator ID="RepeatUntilSuccessful" editable="true"/>
   </TreeNodesModel>
 </root>
