@@ -1,8 +1,12 @@
+<!-- 
+ros2 launch bt_stepper bt_stepper.launch.py xml_path:=repeat_until_successful.xml
+ros2 param set /bt_stepper tick true
+-->
 <root BTCPP_format="4" main_tree_to_execute="MainTree">
   <BehaviorTree ID="MainTree">
-    <CustomSequence>
-      <SS message="Hi there"/>
-      <SS message="Good bye"/>
+    <CustomSequence name="Just a test">
+      <SS name="Saying hi" message="Hi there"/>
+      <SS name="Saying bye" message="Good bye"/>
     </CustomSequence>
   </BehaviorTree>
   <TreeNodesModel>

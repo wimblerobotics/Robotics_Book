@@ -1,5 +1,5 @@
 #include <behaviortree_cpp/bt_factory.h>
-#include <behaviortree_cpp/loggers/bt_zmq_publisher.h>
+#include <behaviortree_cpp/loggers/bt_cout_logger.h>
 
 #include <iostream>
 #include <rclcpp/rclcpp.hpp>
@@ -50,7 +50,7 @@ int main(int argc, char **argv) {
   auto tree = factory.createTreeFromFile(xml_path);
 
   // Add this line to enable Groot monitoring
-  BT::PublisherZMQ publisher_zmq(tree);
+  BT::StdCoutLogger logger_cout(tree);
 
   RCLCPP_INFO(node->get_logger(), "Starting manual BT ticks...");
 
