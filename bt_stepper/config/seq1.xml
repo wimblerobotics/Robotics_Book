@@ -1,0 +1,17 @@
+<!-- 
+ros2 launch bt_stepper bt_stepper.launch.py xml_path:=repeat_until_successful.xml
+ros2 param set /bt_stepper tick true
+-->
+<root BTCPP_format="4" main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <Sequence name="A simple sequence">
+      <SS name="First child" message="First child is running"/>
+      <SS name="Second child" message="Second child is running"/>
+    </Sequence>
+  </BehaviorTree>
+  <TreeNodesModel>
+    <Action ID="Beating"/>
+    <Action ID="MoralHasImproved"/>
+    <Control ID="CustomSequence"/>
+  </TreeNodesModel>
+</root>

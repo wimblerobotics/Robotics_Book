@@ -17,10 +17,6 @@ endif()
 
 add_compile_options(-g)
 
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic)
-endif()
-
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
@@ -44,12 +40,17 @@ ament_target_dependencies(bt_stepper
   ${dependencies}
 )
 target_link_libraries(bt_stepper
-
-  # "${cpp_typesupport_target}"
-  # sigyn_say_something_plugin_node
 )
 
-install(TARGETS bt_stepper
+add_executable(bt_run
+  src/run.cpp
+)
+ament_target_dependencies(bt_run
+  ${dependencies}
+)
+target_link_libraries(bt_run
+)
+install(TARGETS bt_stepper bt_run
   DESTINATION lib/${PROJECT_NAME})
 
 install(DIRECTORY

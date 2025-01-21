@@ -12,7 +12,8 @@
         "/home/ros/sigyn_ws/install/line_finder/include/**",
         "/home/ros/sigyn_ws/install/base/include/**",
         "/opt/ros/jazzy/include/**",
-        "/opt/ros/jazzy/include/rclcpp//**",
+        "/opt/ros/jazzy/include/rclcpp/**",
+        "/opt/ros/jazzy/include/behaviortree_cpp/**",
         "/home/ros/book_ws/src/Robotics_Book/bt_stepper/include/**",
         "/usr/include/**"
       ],
