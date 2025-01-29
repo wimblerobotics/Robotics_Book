@@ -451,13 +451,13 @@ def generate_launch_description():
     )
     ld.add_action(joint_state_publisher_node)
 
-    SaySomethingActionServer = Node(
-        package="custom_behaviors",
-        executable="SaySomethingActionServer",
-        name="SaySomethingActionServer",
-        # prefix=['xterm -e gdb -ex run --args'],
-    )
-    ld.add_action(SaySomethingActionServer)
+    # SaySomethingActionServer = Node(
+    #     package="custom_behaviors",
+    #     executable="SaySomethingActionServer",
+    #     name="SaySomethingActionServer",
+    #     # prefix=['xterm -e gdb -ex run --args'],
+    # )
+    # ld.add_action(SaySomethingActionServer)
     
     rviz_node = Node(
         package="rviz2",

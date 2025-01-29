@@ -69,7 +69,7 @@ bt_navigator:
     # Built-in plugins are added automatically
     # plugin_lib_names: []
     plugin_lib_names:
-    - say_something_plugin_node
+    # - say_something_plugin_node
     - blink_light_plugin_node
 
     error_code_names:
