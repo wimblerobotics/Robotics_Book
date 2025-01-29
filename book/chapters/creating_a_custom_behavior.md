@@ -2,8 +2,8 @@
 
 There are a few ways to create a custom behavior for use in behavior trees.
 One way is to create a new class that inherits from one of the Behavior Tree nodes, and then implement the intended behavior in the `tick()` function. This is the method we will use in this example.
-There is also another way to create a custom behavior, which hass additional benefits.
-I'llexplore that other way later in this book.
+There is also another way to create a custom behavior, which has additional benefits.
+I'll explore that other way later in this book.
 
 Let's begin by creating a simple behavior called ***BlinkLight*** that pretends to blink a light some number of times
 This behavior will be implemented as a behavior tree action which receives, as a parameter,
@@ -38,8 +38,8 @@ you would normally do. I'll put everything in a single file for simplicity.
 Here is the file `blink_light.cpp` which should be placed in the `src` directory of the `custom_behaviors` package.
 
 ```cpp
+#include <behaviortree_cpp/behavior_tree.h>
 #include <iostream>
-#include "behaviortree_cpp/behavior_tree.h"
 
 namespace custom_behaviors {
 
@@ -98,7 +98,7 @@ The include directives are:
   Needed for the `std::cout` statement which will mock the behavior of blinking a light.
 
 I put the code inside a namespace called `custom_behaviors`.
-Useing a namespace is a good practice to avoid name conflicts with other libraries.
+Using a namespace is a good practice to avoid name conflicts with other libraries.
 
 This class will act as a synchronous action node in the behavior tree
 so the class inherits from `BT::SyncActionNode`.
@@ -106,7 +106,7 @@ This means that the node will execute its behavior in a single tick,
 there will be no asynchronous action server to implement the actual behavior.
 Later on, I'll show how to create a custom behavior that uses an action server to
 the perform the real behavior, which will allow for long-running behaviors and
-for code other than the XML-defined behaviour tree to perform the action.
+for code other than the XML-defined behavior tree to perform the action.
 
 
 The constructor for the `BlinkLight` class must take two arguments as shown
@@ -132,7 +132,7 @@ which can be any name you like.
 The argument will be populated with a factory constructor object by the Behavior Tree framework.
 
 The `BT_REGISTER_NODES` macro is filled in with a block of code that registers the `BlinkLight` class with the factory object.
-The `registerNodeType` method is templatized on the type of the node to register, which is `custom_behaviors::BlinkLight` in this case and the argument to the call
+The `registerNodeType` method is templatized on the type of the node to register, which is `custom_behaviors::BlinkLight` in this case, and the argument to the call
 gives the name of the node as it will appear in the XML file.
 The macro creates a bit of magic code that gets executed when the class gets loaded into memory.
 
@@ -167,8 +167,8 @@ add_compile_options(-g)
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(behaviortree_cpp REQUIRED)
-
 find_package(rclcpp REQUIRED)
+
 include_directories(
   ${behaviortree_cpp_INCLUDE_DIRS}
 )
@@ -214,7 +214,7 @@ In particular, we need ament_cmake so that we can use the ament macros, and we n
 The `include_directories` lines are used to include the directories where the header files are located.
 In this case, we only need the directory where the Behavior Tree header files are located.
 
-The `set(dependencies ...)` lins are used to set the dependencies of the package.
+The `set(dependencies ...)` lines are used to set the dependencies of the package.
 I'm using this ***set*** form to make it easier to add more dependencies later on.
 
 The `add_library` line is used to create a shared library from the `blink_light.cpp` file.
@@ -226,10 +226,12 @@ The `list(APPEND plugin_libs ...)` line is used to add the `blink_light_plugin_n
 
 The `foreach(bt_plugin ...)` loop is used to add the dependencies to each plugin library and to define the `BT_PLUGIN_EXPORT` macro for each library. By using the list form, it will be easy to add more libraries later on.
 
-The `install(TARGETS ...)` linw are used to install the libraries in the appropriate directories.
+The `install(TARGETS ...)` lines are used to install the libraries in the appropriate directories.
 
-The `install(DIRECTORY ...)` line is used to install the launch files in the appropriate directory.
+The `install(DIRECTORY ...)` lines are used to install the launch files in the appropriate directory.
 The changes you will have to make to your launch file and to the `navigation.yaml` file will be covered shortly.
+This assumes that your package has a `launch` directory.
+If not, omit these lines from the `CMakeLists.txt` file.
 
 The `ament_export_dependencies`, `ament_export_include_directories`, and `ament_export_libraries` lines are used to export the dependencies, include directories, and libraries of the package so that other packages can use them.
 
@@ -298,7 +300,7 @@ You can do this by running the usual colcon build command:
 colcon build --symlink-install
 ```
 
-You don't need to used the ```---symklink-install``` option, but it is a good idea to use it.
+You don't need to used the ```---symlink-install``` option, but it is a good idea to use it.
 Refer to the ROS 2 documentation for more information on the option.
 
 ## Running the custom behavior
@@ -313,7 +315,7 @@ source install/setup.bash
 Then, run  your usual launch command to start the navigation stack.
 If you've successfully built the `custom_behaviors` package, and modified the
 `navigation.yaml` file used in your launch, the custom behavior should be loaded.
-You can test that the custom behavior is working by, assuming your are using the
+You can test that the custom behavior is working, assuming you are using the 
 sample XML file from the beginning of this chapter, by doing the following:
 
 * Bring up rviz2
