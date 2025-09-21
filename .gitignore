@@ -54,3 +54,8 @@ CATKIN_IGNORE
 .DS_Store
 
 .~*
+._.DS_Store
+
+
+/TeensyCode/.cache/
+/TeensyCode/.pio

@@ -1,0 +1,542 @@
+[
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/AudioStream.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/AudioStream.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/AudioStream.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/AudioStream.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/CrashReport.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/CrashReport.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/CrashReport.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/CrashReport.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/DMAChannel.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/DMAChannel.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/DMAChannel.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/DMAChannel.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/EventResponder.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/EventResponder.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/EventResponder.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/EventResponder.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/HardwareSerial.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/HardwareSerial.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/HardwareSerial.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/HardwareSerial.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/HardwareSerial1.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/HardwareSerial1.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/HardwareSerial1.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/HardwareSerial1.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/HardwareSerial2.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/HardwareSerial2.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/HardwareSerial2.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/HardwareSerial2.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/HardwareSerial3.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/HardwareSerial3.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/HardwareSerial3.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/HardwareSerial3.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/HardwareSerial4.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/HardwareSerial4.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/HardwareSerial4.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/HardwareSerial4.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/HardwareSerial5.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/HardwareSerial5.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/HardwareSerial5.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/HardwareSerial5.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/HardwareSerial6.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/HardwareSerial6.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/HardwareSerial6.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/HardwareSerial6.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/HardwareSerial7.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/HardwareSerial7.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/HardwareSerial7.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/HardwareSerial7.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/HardwareSerial8.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/HardwareSerial8.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/HardwareSerial8.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/HardwareSerial8.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/IPAddress.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/IPAddress.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/IPAddress.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/IPAddress.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/IntervalTimer.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/IntervalTimer.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/IntervalTimer.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/IntervalTimer.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/Print.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/Print.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/Print.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/Print.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/Stream.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/Stream.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/Stream.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/Stream.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/Time.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/Time.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/Time.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/Time.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/Tone.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/Tone.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/Tone.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/Tone.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/WMath.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/WMath.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/WMath.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/WMath.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/WString.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/WString.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/WString.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/WString.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/analog.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/analog.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/analog.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/analog.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/bootdata.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/bootdata.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/bootdata.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/bootdata.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/clockspeed.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/clockspeed.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/clockspeed.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/clockspeed.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/debugprintf.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/debugprintf.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/debugprintf.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/debugprintf.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/delay.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/delay.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/delay.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/delay.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/digital.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/digital.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/digital.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/digital.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/eeprom.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/eeprom.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/eeprom.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/eeprom.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/extmem.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/extmem.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/extmem.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/extmem.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/fuse.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/fuse.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/fuse.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/fuse.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/interrupt.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/interrupt.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/interrupt.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/interrupt.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/keylayouts.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/keylayouts.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/keylayouts.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/keylayouts.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/libc.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/libc.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/libc.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/libc.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/main.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/main.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/main.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/main.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -mthumb -mcpu=cortex-m7 -mfloat-abi=hard -mfpu=fpv5-d16 -x assembler-with-cpp -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 -c -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/memcpy-armv7m.S.o /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/memcpy-armv7m.S",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/memcpy-armv7m.S",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/memcpy-armv7m.S.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -mthumb -mcpu=cortex-m7 -mfloat-abi=hard -mfpu=fpv5-d16 -x assembler-with-cpp -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 -c -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/memset.S.o /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/memset.S",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/memset.S",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/memset.S.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/new.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/new.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/new.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/new.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/nonstd.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/nonstd.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/nonstd.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/nonstd.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/pwm.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/pwm.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/pwm.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/pwm.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/rtc.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/rtc.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/rtc.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/rtc.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/serialEvent.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/serialEvent.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/serialEvent.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/serialEvent.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/serialEvent1.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/serialEvent1.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/serialEvent1.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/serialEvent1.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/serialEvent2.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/serialEvent2.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/serialEvent2.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/serialEvent2.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/serialEvent3.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/serialEvent3.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/serialEvent3.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/serialEvent3.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/serialEvent4.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/serialEvent4.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/serialEvent4.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/serialEvent4.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/serialEvent5.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/serialEvent5.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/serialEvent5.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/serialEvent5.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/serialEvent6.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/serialEvent6.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/serialEvent6.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/serialEvent6.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/serialEvent7.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/serialEvent7.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/serialEvent7.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/serialEvent7.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/serialEvent8.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/serialEvent8.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/serialEvent8.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/serialEvent8.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/serialEventUSB1.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/serialEventUSB1.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/serialEventUSB1.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/serialEventUSB1.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/serialEventUSB2.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/serialEventUSB2.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/serialEventUSB2.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/serialEventUSB2.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_alloc_valid.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_alloc_valid.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_alloc_valid.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_alloc_valid.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_calloc.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_calloc.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_calloc.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_calloc.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_free.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_free.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_free.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_free.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_hash.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_hash.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_hash.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_hash.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_malloc.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_malloc.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_malloc.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_malloc.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_malloc_stats.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_malloc_stats.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_malloc_stats.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_malloc_stats.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_pool.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_pool.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_pool.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_pool.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_realloc.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_realloc.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_realloc.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_realloc.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_realloc_i.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_realloc_i.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_realloc_i.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_realloc_i.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_realloc_move.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_realloc_move.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_realloc_move.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_realloc_move.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_szalloc.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_szalloc.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_szalloc.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_szalloc.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_util.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_util.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_util.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_util.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_zalloc.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_zalloc.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/sm_zalloc.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/sm_zalloc.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/startup.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/startup.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/startup.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/startup.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/tempmon.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/tempmon.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/tempmon.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/tempmon.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_audio.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_audio.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_audio.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_audio.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_desc.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_desc.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_desc.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_desc.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_flightsim.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_flightsim.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_flightsim.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_flightsim.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_inst.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_inst.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_inst.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_inst.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_joystick.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_joystick.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_joystick.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_joystick.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_keyboard.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_keyboard.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_keyboard.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_keyboard.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_midi.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_midi.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_midi.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_midi.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_mouse.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_mouse.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_mouse.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_mouse.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_mtp.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_mtp.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_mtp.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_mtp.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_rawhid.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_rawhid.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_rawhid.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_rawhid.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_seremu.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_seremu.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_seremu.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_seremu.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_serial.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_serial.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_serial.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_serial.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_serial2.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_serial2.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_serial2.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_serial2.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_serial3.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_serial3.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_serial3.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_serial3.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_touch.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_touch.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_touch.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/usb_touch.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/yield.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/yield.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4/yield.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/FrameworkArduino/yield.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/liba53/Wire/Wire.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I/home/ros/.platformio/packages/framework-arduinoteensy/libraries/Wire -I/home/ros/.platformio/packages/framework-arduinoteensy/libraries/Wire/utility -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/libraries/Wire/Wire.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/libraries/Wire/Wire.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/liba53/Wire/Wire.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/liba53/Wire/WireIMXRT.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I/home/ros/.platformio/packages/framework-arduinoteensy/libraries/Wire -I/home/ros/.platformio/packages/framework-arduinoteensy/libraries/Wire/utility -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/libraries/Wire/WireIMXRT.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/libraries/Wire/WireIMXRT.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/liba53/Wire/WireIMXRT.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/liba53/Wire/WireKinetis.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I/home/ros/.platformio/packages/framework-arduinoteensy/libraries/Wire -I/home/ros/.platformio/packages/framework-arduinoteensy/libraries/Wire/utility -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/libraries/Wire/WireKinetis.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/libraries/Wire/WireKinetis.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/liba53/Wire/WireKinetis.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-gcc -o .pio/build/WimbleRobotics_Teensysonar/liba53/Wire/utility/twi.c.o -c -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -I/home/ros/.platformio/packages/framework-arduinoteensy/libraries/Wire -I/home/ros/.platformio/packages/framework-arduinoteensy/libraries/Wire/utility -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 /home/ros/.platformio/packages/framework-arduinoteensy/libraries/Wire/utility/twi.c",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "/home/ros/.platformio/packages/framework-arduinoteensy/libraries/Wire/utility/twi.c",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/liba53/Wire/utility/twi.c.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/common/core/module.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -Isrc -I/home/ros/.platformio/packages/framework-arduinoteensy/libraries/Wire -I/home/ros/.platformio/packages/framework-arduinoteensy/libraries/Wire/utility -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 common/core/module.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "common/core/module.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/common/core/module.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/common/core/serial_manager.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -Isrc -I/home/ros/.platformio/packages/framework-arduinoteensy/libraries/Wire -I/home/ros/.platformio/packages/framework-arduinoteensy/libraries/Wire/utility -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 common/core/serial_manager.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "common/core/serial_manager.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/common/core/serial_manager.cpp.o"
+    },
+    {
+        "command": "/home/ros/.platformio/packages/toolchain-gccarmnoneeabi-teensy/bin/arm-none-eabi-g++ -o .pio/build/WimbleRobotics_Teensysonar/src/WimbleRobotics_Teensysonar.cpp.o -c -std=c++17 -fno-exceptions -felide-constructors -fno-rtti -std=gnu++17 -Wno-error=narrowing -fpermissive -fno-threadsafe-statics -Wall -Wextra -O2 -Wno-unused-parameter -Wno-deprecated-copy -Wno-sign-compare -Wall -ffunction-sections -fdata-sections -mthumb -mcpu=cortex-m7 -nostdlib -mfloat-abi=hard -mfpu=fpv5-d16 -O2 -DPLATFORMIO=60118 -D__IMXRT1062__ -DARDUINO_TEENSY41 -DTEENSY_V2_VERSION=2.0 -DTEENSY_V2_BUILD_DATE=\\\"1758394778\\\" -DBOARD_ID=1 -DBOARD_NAME=Navigation_Safety -DUSB_SERIAL -DARDUINO=10805 -DTEENSYDUINO=159 -DCORE_TEENSY -DF_CPU=600000000 -DLAYOUT_US_ENGLISH -Isrc -I/home/ros/.platformio/packages/framework-arduinoteensy/libraries/Wire -I/home/ros/.platformio/packages/framework-arduinoteensy/libraries/Wire/utility -I. -Icommon -Icommon/core -Imodules -I/home/ros/.platformio/packages/framework-arduinoteensy/cores/teensy4 src/WimbleRobotics_Teensysonar.cpp",
+        "directory": "/home/ros/book_ws/src/Robotics_Book/TeensyCode",
+        "file": "src/WimbleRobotics_Teensysonar.cpp",
+        "output": ".pio/build/WimbleRobotics_Teensysonar/src/WimbleRobotics_Teensysonar.cpp.o"
+    }
+]

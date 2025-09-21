@@ -1,0 +1,38 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "PlatformIO: Build (WimbleRobotics_Teensysonar)",
+            "type": "shell",
+            "command": "platformio",
+            "args": ["run", "-e", "WimbleRobotics_Teensysonar"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "PlatformIO: Clean",
+            "type": "shell",
+            "command": "platformio",
+            "args": ["run", "-t", "clean"],
+            "group": "build"
+        },
+        {
+            "label": "PlatformIO: Upload (WimbleRobotics_Teensysonar)",
+            "type": "shell",
+            "command": "platformio",
+            "args": ["run", "-e", "WimbleRobotics_Teensysonar", "-t", "upload"],
+            "group": "build"
+        }
+    ]
+}

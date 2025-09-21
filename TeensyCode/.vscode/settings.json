@@ -1,0 +1,33 @@
+{
+    "C_Cpp.intelliSenseEngine": "default",
+    "C_Cpp.errorSquiggles": "disabled", 
+    "C_Cpp.configurationProvider": "ms-vscode.makefile-tools",
+    "C_Cpp.autoAddFileAssociations": false,
+    "C_Cpp.configurationWarnings": "disabled",
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/compile_commands.json",
+    "C_Cpp.clang_format_path": "clang-format",
+    "C_Cpp.clang_format_style": "file",
+    "C_Cpp.formatting": "clangFormat",
+    "C_Cpp.clang_format_fallbackStyle": "Google",
+    "C_Cpp.vcFormat.newLine.beforeElse": false,
+    "cmake.configureOnOpen": false,
+    "files.associations": {
+        "*.h": "cpp",
+        "*.hpp": "cpp",
+        "*.cpp": "cpp",
+        "*.ino": "cpp"
+    },
+    "platformio-ide.disablePIOHomeStartup": true,
+    "platformio-ide.autoRebuildAutocompleteIndex": false,
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools",
+        "editor.formatOnSave": false
+    },
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools", 
+        "editor.formatOnSave": false
+    },
+    "editor.formatOnType": false,
+    "editor.formatOnPaste": true,
+    "clangd.enable": false
+}
