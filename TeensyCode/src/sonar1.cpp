@@ -20,13 +20,7 @@ void setup() {
 
   // Configure SonarMonitor
   SonarMonitor& sonar_monitor = SonarMonitor::getInstance();
-  SonarSensorConfig sonar_config;
-  sonar_config.enabled = true;
-  sonar_config.trigger_pin = 32;  // Example pin
-  sonar_config.echo_pin = 33;     // Example pin
-  sonar_config.name = "FrontSONAR"; // Safely set the name
-
-  sonar_monitor.configureSensor(0, sonar_config);
+  sonar_monitor.configureSensor(0, Device("Front-SONAR", 32, 33));
 
   // Setup all registered modules
   Module::setupAll();

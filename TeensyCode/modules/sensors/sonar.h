@@ -28,21 +28,20 @@ static constexpr uint8_t kMaxSonarSensors = 4;
 /**
  * @brief Configuration for a single sonar sensor.
  */
-struct SonarSensorConfig {
+struct Device {
   String name;
   uint8_t trigger_pin;
   uint8_t echo_pin;
-  bool enabled = true;
-};
+  bool enabled = false;
+  int32_t countdown_ticks = 0;  // For timing the echo.
+  bool echo_found = false;
+  int32_t waitout_countdown_ticks = 0;
+  float distance = 0.0f;
 
-/**
- * @brief Status of a single sonar sensor.
- */
-struct SonarSensorStatus {
-  float distance_cm = -1.0f;
-  bool is_valid = false;
-  char name[16] = "Unnamed";
-  uint32_t last_reading_time_ms = 0;
+  Device(String name, uint8_t trigger_pin, uint8_t echo_pin)
+      : name(name), trigger_pin(trigger_pin), echo_pin(echo_pin), enabled(true) {}
+
+  Device() = default;
 };
 
 /**
@@ -58,10 +57,9 @@ class SonarMonitor : public WimbleRobotics_Teensy::Module {
 
   // Sensor access
   float getDistance(uint8_t sensor_index) const;
-  const SonarSensorStatus& getSensorStatus(uint8_t sensor_index) const;
 
   // Configuration
-  void configureSensor(uint8_t index, const SonarSensorConfig& config);
+  void configureSensor(uint8_t index, const Device& config);
 
  protected:
   // Module interface
@@ -70,28 +68,33 @@ class SonarMonitor : public WimbleRobotics_Teensy::Module {
   const char* name() const override { return "SonarMonitor"; }
 
  private:
+  static constexpr float max_distance_meters = 2.2f;  // Maximum distance for HC-SR04 is 2.2 meters
+
   // timer_intervale_us must be the desired pulse width (10us) for HC-SR04.
-  static const uint32_t timer_interval_us = 10;  // 10 us timer interval
+  static constexpr uint32_t timer_interval_us = 10;  // 10 us timer interval
 
-  // echo_sample_interval_us is the longest sample interval for a sonar sensor.
-  // The HC-SR04 max range is 6 meters. Multiply that by 2
-  // for total round trip time.  which corresponds to a pulse duration of 136ms.
-  static const uint32_t echo_sample_interval_us = 150'000;  // 150 ms between samples
+  // max_sample_interval_us is the longest sample interval for a sonar sensor.
+  // When the HC-SR04 doesn't get an echo, the devices I tested ended
+  // up taking a full 134 milliseconds before the echo signal dropped.
+  // I rounded this up to 150 milliseconds.
+  // This is the period you need to wait before triggering the sensor again.
+  static constexpr uint32_t max_sample_interval_us = 150'000;  // 150 ms between samples
 
-  static const uint32_t initial_echo_sample_interval_count =
-      echo_sample_interval_us / timer_interval_us;  // 150 ms echo sample interval
+  // echo_sample_interval_us is the longest valid sample interval for a sonar sensor.
+  // The HC-SR04 has a valid maximum round trip time of 38 milliseconds.
+  // I rounded this up to 40 milliseconds.
+  // If the echo hasn't been received in this time, we assume no echo.
+  static constexpr uint32_t echo_sample_interval_us = 40'000;  // 40 ms between samples
 
-  enum class State { PULSE_HIGH, PULSE_LOW, COUNTDOWN } state_ = State::PULSE_HIGH;
+  enum class State { PULSE_HIGH, PULSE_LOW, COUNTDOWN, WAIT_OUT_ECHO } state_ = State::PULSE_HIGH;
 
   SonarMonitor();
 
   static void timerInterruptHandler();
 
-  void triggerSensor(uint8_t index);
   void handleEcho();
 
-  SonarSensorConfig sensor_configs_[kMaxSonarSensors];
-  SonarSensorStatus sensor_status_[kMaxSonarSensors];
+  Device devices_[kMaxSonarSensors];
 
   volatile uint8_t current_sensor_index_ = 0;
   volatile unsigned long echo_start_time_ = 0;
