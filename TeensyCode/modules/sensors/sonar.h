@@ -14,7 +14,9 @@
 #pragma once
 
 #include <Arduino.h>
+
 #include <cstdint>
+
 #include "common/core/module.h"
 #include "common/core/serial_manager.h"
 
@@ -51,7 +53,7 @@ struct SonarSensorStatus {
  * for easy integration and real-time performance.
  */
 class SonarMonitor : public WimbleRobotics_Teensy::Module {
-public:
+ public:
   static SonarMonitor& getInstance();
 
   // Sensor access
@@ -61,21 +63,36 @@ public:
   // Configuration
   void configureSensor(uint8_t index, const SonarSensorConfig& config);
 
-protected:
+ protected:
   // Module interface
   void setup() override;
   void loop() override;
   const char* name() const override { return "SonarMonitor"; }
 
-private:
+ private:
+  // timer_intervale_us must be the desired pulse width (10us) for HC-SR04.
+  static const uint32_t timer_interval_us = 10;  // 10 us timer interval
+
+  // echo_sample_interval_us is the longest sample interval for a sonar sensor.
+  // The HC-SR04 max range is 6 meters. Multiply that by 2
+  // for total round trip time.  which corresponds to a pulse duration of 136ms.
+  static const uint32_t echo_sample_interval_us = 150'000;  // 150 ms between samples
+
+  static const uint32_t initial_echo_sample_interval_count =
+      echo_sample_interval_us / timer_interval_us;  // 150 ms echo sample interval
+
+  enum class State { PULSE_HIGH, PULSE_LOW, COUNTDOWN } state_ = State::PULSE_HIGH;
+
   SonarMonitor();
+
+  static void timerInterruptHandler();
 
   void triggerSensor(uint8_t index);
   void handleEcho();
 
   SonarSensorConfig sensor_configs_[kMaxSonarSensors];
   SonarSensorStatus sensor_status_[kMaxSonarSensors];
-  
+
   volatile uint8_t current_sensor_index_ = 0;
   volatile unsigned long echo_start_time_ = 0;
   volatile bool is_echo_active_ = false;
@@ -84,4 +101,4 @@ private:
   static SonarMonitor* instance_;
 };
 
-} // namespace wimblerobotics_teensy
+}  // namespace WimbleRobotics_Teensy
