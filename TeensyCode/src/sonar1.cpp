@@ -4,7 +4,8 @@
  *
  * @author Wimble Robotics
  * @date 2025
- */
+ * @license Apache-2.0
+*/
 
 #include <Arduino.h>
 

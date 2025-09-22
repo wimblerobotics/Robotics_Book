@@ -2,9 +2,22 @@
  * @file sonar_monitor.cpp
  * @brief Implementation of the SonarMonitor module.
  *
+ * Core responsibilities
+ * - Configure GPIO pins and attach interrupts for each enabled HC-SR04 device.
+ * - Drive a timer-based state machine that issues precise 10 µs TRIG pulses and
+ *   enforces valid echo windows and full timeout wait-outs to avoid re-triggering too early.
+ * - Capture echo timing on GPIO edges and compute distances with minimal ISR work.
+ * - Keep loop() light; timing-critical behavior is isolated to ISRs for low jitter.
+ *
+ * Notes
+ * - We attach the same CHANGE interrupt handler to all ECHO pins. Because only one sensor is
+ *   active at a time via the scheduler, this is sufficient for a compact demo. Production code
+ *   may prefer per-pin ISRs (or hardware input capture) for maximum robustness.
+ *
  * @author Wimble Robotics
  * @date 2025
- */
+ * @license Apache-2.0
+*/
 
 #include "modules/sensors/sonar.h"
 
@@ -46,7 +59,8 @@ void SonarMonitor::setup() {
       pinMode(devices_[i].trigger_pin, OUTPUT);
       pinMode(devices_[i].echo_pin, INPUT);
 
-      // Attach a single interrupt handler for all echo pins
+      // Attach a single interrupt handler for all echo pins. Using CHANGE to capture both
+      // rising (start timing) and falling (compute duration) edges.
       attachInterrupt(digitalPinToInterrupt(devices_[i].echo_pin), echo_interrupt_handler, CHANGE);
     }
   }
@@ -75,8 +89,6 @@ void SonarMonitor::timerInterruptHandler() {
       }
 
       // Trigger the next sensor in a round-robin fashion
-      // Serial.print("Triggering sensor ");
-      // Serial.println(instance.current_sensor_index_);
       digitalWrite(instance.devices_[instance.current_sensor_index_].trigger_pin, HIGH);
       instance.state_ = State::PULSE_LOW;
     }
@@ -86,6 +98,8 @@ void SonarMonitor::timerInterruptHandler() {
     case State::PULSE_LOW: {
       Device& device = instance.devices_[instance.current_sensor_index_];
       digitalWrite(device.trigger_pin, LOW);
+
+      // Setup timers for the echo window and the full wait-out duration
       device.countdown_ticks = echo_sample_interval_us / timer_interval_us;
       device.echo_found = false;
       device.waitout_countdown_ticks =
@@ -96,7 +110,7 @@ void SonarMonitor::timerInterruptHandler() {
     break;
 
     case State::COUNTDOWN: {
-      // Wait for echo handlin g via interrupt
+      // Wait for echo handling via interrupt within the valid window
       Device& device = instance.devices_[instance.current_sensor_index_];
 
       if (device.echo_found) {
@@ -161,10 +175,12 @@ void SonarMonitor::handleEcho() {
 
   uint8_t voltage_level = digitalRead(device.echo_pin);
   if (voltage_level == HIGH) {
+    // Rising edge: start timing
     echo_start_time_ = micros();
     is_echo_active_ = true;
   } else {
     if (is_echo_active_) {
+      // Falling edge: compute duration and distance
       device.echo_found = true;
       unsigned long echo_duration = micros() - echo_start_time_;
       device.distance = echo_duration * 0.000343 / 2;
