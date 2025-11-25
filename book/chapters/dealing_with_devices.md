@@ -192,11 +192,13 @@ looking at device '/devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1.2':
     ATTR{devpath}=="1.2"
 ```
 
+**Important**: The `udevadm info` output shows `ATTR{...}`, but when writing udev rules, you must use `ATTRS{...}` for these USB characteristics.
+
 ### Step 4: Identify Unique Characteristics
 
 For each device, you need to find attributes that uniquely identify it. In order of preference:
 
-1. **Serial number** (if available): `ATTR{serial}=="ABC123"`
+1. **Serial number** (if available): `ATTRS{serial}=="ABC123"`
 2. **USB port location**: `ATTRS{devpath}=="1.2"`  
 3. **Vendor/Product ID combination**: `ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60"`
 4. **Product string** (less reliable): `ATTRS{product}=="CP2102*"`
@@ -307,10 +309,14 @@ Let's break this down:
 
 ### Understanding ATTRS vs ATTR
 
-- **`ATTRS{}`**: Walks up the device tree and matches any parent device's attributes. Use this for USB vendor/product IDs, as they're often stored on parent USB device nodes.
-- **`ATTR{}`**: Only matches attributes of the specific device node. Use this for attributes directly on the target device.
+This is a crucial distinction that often causes confusion:
 
-When in doubt, use `ATTRS{}` for USB characteristics and `ATTR{}` for device-specific properties.
+- **`ATTRS{}`**: Walks up the device tree and matches any parent device's attributes. Use this in udev rules for USB characteristics like `idVendor`, `idProduct`, `serial`, `manufacturer`, `product`, and `devpath`. These are typically stored on parent USB device nodes.
+- **`ATTR{}`**: Only matches attributes of the specific device node. Use this for device-specific properties like `index` (for video devices) or interface class information.
+
+**Key point**: When `udevadm info --attribute-walk` shows `ATTR{idVendor}`, you must use `ATTRS{idVendor}` in your udev rule. The command output shows what attributes are available, but the rule syntax requires `ATTRS{}` to walk up the device tree.
+
+**Rule of thumb**: For USB device identification, almost always use `ATTRS{}`.
 
 ### Why devpath Matters
 
