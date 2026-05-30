@@ -1,0 +1,138 @@
+
+
+
+On 8/21/25 15:34, Dave Everett wrote:
+> Looks goor Michael.
+>
+> The inflation appears to fill petty much all of the available space sometimes, yet the robot continues to move through those spaces. I don't achieve that. If the space between the inflation is smaller than the robot, then it will not navigate through there.
+>
+> I have an accurate model of my robot, is your model accurate in size?
+>
+> I'm trying to understand why I have problems but you do not. My desire is for enough inflation to push the robot far from edges and corners to avoid it getting into situations where it needs to backup or clear.
+>
+> Dave
+
+
+My robot model is pretty accurate, within a couple of mm with the physical description. Further, my odometry is calibrated to be pretty accurate, well, over small periods of time.
+
+Consider, from my navigation.yaml, below, just the local_costmap section.
+
+my inflation_layer.inflation_radius is 0.35 which means that in my 0.8 m wide hallway, the inflation from both walls pretty much meets in the middle. Steve Macenski, in some article I found long ago, suggested that the inflation radius should essentially spread gradually across the whole area where you want to robot to either be more or less outside of or where the robot will be centered, if opposing inflation radii meet or overlap.
+
+The key, though is inflation_layer.cost_scaling_factor of 8.0. This means that the inflated values will exponentially decay very fast. The robot will treat distances very near to an obstacle as lethal, but will allow getting close to a wall otherwise if necessary. Remember that the robot really only completely avoids areas where the costmap value exceeds some threshold value, which would be 100 in my case, but that's commented out (and will use whatever the default is, which might be 100). By making the inflation_radius somewhat wide and using a steep cost_scaling_factor, the robot sees a non-zero cost whenever it gets within a third of a meter from some wall. Remember that the whole purpose of a costmap is so that the robot will attempt to plot a course where the "cost" of touching some pixel with the robot body will be minimum--the planners will avoid sending the robot on a path where the pixels have high cost values if there is a low cost option (sort of, but that's another story).
+
+My robot_radius itself is 0.28 m. If the robot has room, that is if there is zero cost area nearby, the robot will choose that. But in my hallways and doorways, the combination of robot_radius, inflation_radius and cost_scaling_factor will force the robot to center itself in narrow places. The sum of all the cost pixels covered by the robot when the robot travels will be the smallest that the planner could come up with.
+
+If I made my robot_radius a bit bigger, the robot wouldn't be able to go through the doorway at all. One or more pixels would have too high a cost so that the sum exceeded the lethal threshold and the planner would disallow movement that touched that pixel in the costmap. But I considered this when I decided how big to make my robot to start with. I measured every opening the robot had to go through and made the robot small enough so that the exponential gradient of being near a wall still allowed a small amount of wiggle room for the robot. This version of my robot is circular. The previous one was rectangular and instead of 'robot_radius' I used the footprint specification. If the robot is not circular, you probably only want to use the
+plugin: "nav2_mppi_controller::MPPIController"
+
+as part of the controller_server YAML, but that's another discussion. 
+
+But local_costmap is pretty much what defines where your robot can travel, once the global_costmap has solved a possible path to where you want to go. 
+
+In case you also didn't know, the "plugins" section for "local_costmap" is order-defined. Not all lists in the YAML file care what order things are in within the list, but it matters a lot for this case. That is, the costmap is build up by doing the operations you name in the order given. In my case, the local costmap starts with a copy of the global_costmap, that's what the controller_server does--it grabs a rectangle of the global costmap and uses that to start drawing a picture. Then the local_costmap code will apply the section I named "static_layer". 
+
+Remember that the plugin names are just made up bullshit names and don't even suggest what a layer actually does. If you go down a bit to see what the definition of "static_layer" is, the magic is because the "plugin:" for that YAML section says "nav2_costmap_2d::StaticLayer". That's the only thing at all that makes it operate as a static layer. So, local_costmap takes the 3 m x 3 m (height by width) copy of the global costmap it was handed and draws over the top of that with whatever the static layer has for that same 3 x 3 area.
+
+Then the local_costmap uses what I named the "lidar_layer" to get some more bits to draw over the top of the picture so far.
+
+Then whatever the "oakd_top_lay" section says to do in order to find some bits is used to draw over the picture built up so far.
+
+Finally, the thing I called "inflation_layer" takes over. So, the c++ code in the "nav2_costmap_2d::InflationLayer" library looks at the picture so far and adds more bits to the picture by creating an exponentially decaying field of cost pixels off from the edge of any obstacle.
+
+Then the local_costmap picture that was built up is handed back to the controller server which then uses it to try to figure out what to do in the next 20th of a second or so, depending on your loop frequency.
+
+The other parameters in the local_costmap section are important, and you should understand what each and everyone of them does. 'resolution' for instance decides how big each of the checkerboard squares are inside the 3 m x 3 m local_costmap box. It affects how small a detail can be seen, and therefore whether the controller can get close to small features, like table legs. On the down side, a small resolution means lots of boxes which means lots of computing. Halve the resolution and you increase the computation time by four. On a Raspberry Pi, this is critical. On my AMD 7900, 12-core/24-thread CPU, I run everything, including gazebo and rviz on it and it barely moves the needle. Without gazebo running but with rviz2 running, my CPU load is just barely above 1.
+
+Update_frequency is another hard choice. It affects how fast you can move your robot. It interacts with a bunch of other tuning parameters, but if your robot is moving fast enough so that it can go farther in one controller loop time (20 Hz for my robot) than the planning horizon (I won't elaborate here), then the local_costmap won't see the LIDAR or other sensors in time in order to update to costmap so that the controller will know to avoid an obstacle.
+
+There's lots of stuff to absorb in navigation.yaml, and you really, really, really need to understand pretty much every damn last parameter to get it to work right. At the moment, I'm futzing with the AMCL section. And I'm having to go back and make my IMUs report faster and my odom to be computed faster and possibly slow down my robot so that AMCL never looses localization. But the parameters in that section are very hard to fathom, even after reading the research paper that the algorithm is based on. I've gotten pretty close to getting it right, and now I'm in the process of trying to write my own laser driver (who am I kidding, I'm mostly shouting at AI to write a lot of the code) which will look at the IMU data, the cmd_vel request and the odometry to try to correct each of the 450 laser beam readings to account for the robot's movement every tenth of a second.
+
+It all comes down to the fact that if you lie to the algorithms, they will lie right back to you.
+
+Did I mention that Everything about Robots is Hard? (TM) :-)
+local_costmap:
+  local_costmap:
+    ros__parameters:
+      debug: True
+      # always_send_full_costmap: True # Whether to send full costmap every update, rather than updates.
+      global_frame: odom
+      height: 3 # Height of costmap (m).
+      # initial_transform_timeout: 60.0 # Time to wait for transform to be available before erroring out.
+      # lethal_cost_threshold: 100 # Minimum cost of an occupancy grid map to be considered a lethal obstacle.
+      # map_topic: /map # Topic of map from map_server or SLAM.
+      # origin_x: 0.0 # X origin of the costmap relative to width (m).
+      # origin_y: 0.0 # Y origin of the costmap relative to height (m).
+      publish_frequency: 5.0 # Frequency to publish costmap to topic.
+      resolution: 0.0508 # Resolution of 1 pixel of the costmap, in meters.
+      robot_base_frame: base_link
+      robot_radius: 0.28 # Radius of robot base (m). # was 0.2286, enlarge footprint buffer
+      rolling_window: True # Whether costmap should roll with robot base frame.
+      # track_unknown_space: True # If false, treats unknown space as free space, else as unknown space.
+      transform_tolerance: 0.2 # TF transform tolerance.
+      # trinary_costmap: True # Whether to use trinary or continuous costmap.
+      # unknown_cost_value: 255 # Cost of unknown space if tracking it.
+      update_frequency: 15.0 # Costmap update frequency.
+      width: 3 # Width of costmap (m).
+
+      plugins: [
+        "static_layer",
+        # "sonar_layer",
+        "lidar_layer",
+        "oakd_top_layer",
+        # "voxel_layer",
+        "inflation_layer"]
+
+      static_layer:
+        plugin: "nav2_costmap_2d::StaticLayer"
+        map_subscribe_transient_local: True
+
+      inflation_layer:
+        enabled: True
+        cost_scaling_factor: 8.0   # increased to push farther from obstacles
+        inflation_radius: 0.35   # larger buffer radius around obstacles
+        plugin: "nav2_costmap_2d::InflationLayer"
+
+      lidar_layer:
+        enabled: True
+        combination_method: 1 # 0 => Overwrite, 1 => >Max, 2 => MaxWithoutUnknownOverwrite
+        expected_update_rate: 10.0 # Expected rate to get new data from sensor.
+        footprint_clearing_enabled: True # Clear any occupied cells under robot footprint.
+        map_subscribe_transient_local: True
+        observation_sources: front_lidar
+        plugin: "nav2_costmap_2d::ObstacleLayer"
+        front_lidar:
+          clearing: True # Whether source should raytrace clear in costmap.
+          # expected_update_rate: 0.0 # Expected rate to get new data from sensor.
+          data_type: "LaserScan" # Data type of input, LaserScan or PointCloud2.
+          inf_is_valid: True # Are infinite returns from laser scanners valid measurements to raycast.
+          marking: True # Whether source should mark in costmap.
+          max_obstacle_height: 2.0 # Maximum height to add return to occupancy grid.
+          min_obstacle_height: 0.0 # Minimum height to add return to occupancy grid.
+          obstacle_max_range: 2.4 # Maximum range to mark obstacles in costmap.
+          obstacle_min_range: 0.0 # Minimum range to mark obstacles in costmap.
+          raytrace_max_range: 3.0 # Maximum range to raytrace clear obstacles from costmap.
+          raytrace_min_range: 0.0 # Minimum range to raytrace clear obstacles from costmap.
+          topic: /scan # Topic of data.
+      oakd_top_layer:
+        enabled: True
+        combination_method: 1 # 0 => Overwrite, 1 => >Max, 2 => MaxWithoutUnknownOverwrite
+        footprint_clearing_enabled: True # Clear any occupied cells under robot footprint.
+        map_subscribe_transient_local: True
+        observation_sources: oakd_top
+        plugin: "nav2_costmap_2d::ObstacleLayer"
+        oakd_top:
+          clearing: True # Whether source should raytrace clear in costmap.
+          # expected_update_rate: 0.0 # Expected rate to get new data from sensor.
+          data_type: "LaserScan" # Data type of input, LaserScan or PointCloud2.
+          inf_is_valid: True # Are infinite returns from laser scanners valid measurements to raycast.
+          marking: True # Whether source should mark in costmap.
+          max_obstacle_height: 2.0 # Maximum height to add return to occupancy grid.
+          min_obstacle_height: 0.05 # Minimum height to add return to occupancy grid.
+          obstacle_max_range: 2.4 # Maximum range to mark obstacles in costmap.
+          obstacle_min_range: 0.0 # Minimum range to mark obstacles in costmap.
+          raytrace_max_range: 3.0 # Maximum range to raytrace clear obstacles from costmap.
+          raytrace_min_range: 0.0 # Minimum range to raytrace clear obstacles from costmap.
+          topic: /stereo/points2 # Topic of data.
+
+

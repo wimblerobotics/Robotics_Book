@@ -1,0 +1,36 @@
+% Custom styling for code blocks and links
+\usepackage{xcolor}
+\usepackage{fancyvrb}
+\usepackage{framed}
+
+% Define colors
+\definecolor{codegray}{RGB}{248,248,248}
+\definecolor{codeborder}{RGB}{220,220,220}
+\definecolor{linkblue}{RGB}{0,102,204}    % Browser-style blue for links
+
+% Configure hyperref colors - this will be applied when hyperref loads
+\AtBeginDocument{%
+    \hypersetup{
+        colorlinks=true,
+        linkcolor=linkblue,
+        urlcolor=linkblue,
+        citecolor=linkblue,
+        filecolor=linkblue,
+        pdfborder={0 0 0},
+        breaklinks=true
+    }%
+}
+
+% Redefine Shaded environment used by Pandoc for code blocks
+\renewenvironment{Shaded}{%
+  \def\FrameCommand{%
+    \hspace{1pt}%
+    {\color{codeborder}\vrule width 1pt}%
+    {\color{codegray}\vrule width 4pt}%
+    \colorbox{codegray}%
+  }%
+  \MakeFramed{\advance\hsize-\width\FrameRestore}%
+}{\endMakeFramed}
+
+% Add some padding to code blocks
+\fvset{fontsize=\small}
